@@ -11,9 +11,9 @@ errorprone {
 }
 
 dependencies {
-    api(libs.groovy)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     api(projects.baseServices)
     api(projects.coreApi)
@@ -33,15 +33,15 @@ dependencies {
     implementation(projects.pluginsJava)
     implementation(projects.pluginsJavaBase)
 
-    implementation(libs.groovyXml)
-    implementation(libs.guava)
-    implementation(libs.commonsLang)
+    implementation(oldLibs.groovyXml)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.commonsLang)
 
     testImplementation(projects.baseServicesGroovy)
     testImplementation(testFixtures(projects.core))
     testImplementation(projects.native)
     testImplementation(projects.war)
-    testImplementation(libs.ant)
+    testImplementation(oldLibs.ant)
 
     testRuntimeOnly(projects.distributionsJvm) {
         because("ProjectBuilder tests load services from a Gradle distribution.")

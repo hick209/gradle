@@ -37,18 +37,18 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.snapshots)
 
-    api(libs.guava)
-    api(libs.jspecify)
-    api(libs.inject)
+    api(oldLibs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.inject)
 
     implementation(projects.loggingApi)
     implementation(projects.maven)
     implementation(projects.publish)
     implementation(projects.versionControl)
 
-    implementation(libs.commonsLang)
-    implementation(libs.groovy)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.groovy)
+    implementation(oldLibs.slf4jApi)
 
     testFixturesApi(projects.baseServices) {
         because("Test fixtures export the Named class")
@@ -63,7 +63,7 @@ dependencies {
     testImplementation(projects.native)
     testImplementation(projects.resources)
     testImplementation(projects.baseServicesGroovy)
-    testImplementation(libs.commonsIo)
+    testImplementation(oldLibs.commonsIo)
     testImplementation(testFixtures(projects.serialization))
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.versionControl))
@@ -75,9 +75,9 @@ dependencies {
     integTestImplementation(projects.native)
     integTestImplementation(projects.enterpriseOperations)
     integTestImplementation(projects.resources)
-    integTestImplementation(libs.nativePlatform)
-    integTestImplementation(libs.ant)
-    integTestImplementation(libs.jgit)
+    integTestImplementation(oldLibs.nativePlatform)
+    integTestImplementation(oldLibs.ant)
+    integTestImplementation(oldLibs.jgit)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("ProjectBuilder tests load services from a Gradle distribution.")

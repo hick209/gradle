@@ -38,7 +38,7 @@ dependencies {
     api(projects.problemsApi)
     api(projects.snapshots)
 
-    api(libs.kotlinStdlib)
+    api(oldLibs.kotlinStdlib)
 
     implementation(projects.baseServices)
     implementation(projects.configurationCacheBase)
@@ -47,5 +47,5 @@ dependencies {
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.stdlibKotlinExtensions)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 }

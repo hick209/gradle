@@ -31,9 +31,9 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.time)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
-    implementation(libs.commonsLang)
+    implementation(oldLibs.commonsLang)
     implementation(projects.baseServices)
     implementation(projects.functional)
     implementation(projects.loggingApi)

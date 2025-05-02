@@ -46,36 +46,36 @@ dependencies {
         because("HttpServer leaks PortAllocator to spock AST transformer")
     }
 
-    api(libs.gson)
-    api(libs.groovy)
-    api(libs.groovyXml)
-    api(libs.guava)
-    api(libs.hamcrest)
-    api(libs.jettyWebApp) {
+    api(oldLibs.gson)
+    api(oldLibs.groovy)
+    api(oldLibs.groovyXml)
+    api(oldLibs.guava)
+    api(oldLibs.hamcrest)
+    api(oldLibs.jettyWebApp) {
         because("Part of the public API via HttpServer")
     }
-    api(libs.jansi)
-    api(libs.jettySecurity)
-    api(libs.jettyServer)
-    api(libs.jettyUtil)
-    api(libs.jgit) {
+    api(oldLibs.jansi)
+    api(oldLibs.jettySecurity)
+    api(oldLibs.jettyServer)
+    api(oldLibs.jettyUtil)
+    api(oldLibs.jgit) {
         because("Some tests require a git reportitory - see AbstractIntegrationSpec.initGitDir(")
     }
-    api(libs.jsr305)
-    api(libs.junit) {
+    api(oldLibs.jsr305)
+    api(oldLibs.junit) {
         because("Part of the public API, used by spock AST transformer")
     }
-    api(libs.mavenResolverApi) {
+    api(oldLibs.mavenResolverApi) {
         because("For ApiMavenResolver. API we interact with to resolve Maven graphs & artifacts")
     }
-    api(libs.samplesCheck) {
+    api(oldLibs.samplesCheck) {
         exclude(module = "groovy-all")
     }
-    api(libs.samplesDiscovery)
-    api(libs.servletApi)
-    api(libs.slf4jApi)
-    api(libs.socksProxy)
-    api(libs.spock) {
+    api(oldLibs.samplesDiscovery)
+    api(oldLibs.servletApi)
+    api(oldLibs.slf4jApi)
+    api(oldLibs.socksProxy)
+    api(oldLibs.spock) {
         because("Part of the public API")
     }
 
@@ -111,34 +111,34 @@ dependencies {
     implementation(testFixtures(projects.buildOperations))
     implementation(testFixtures(projects.buildProcessServices))
 
-    implementation(libs.ansiControlSequenceUtil)
-    implementation(libs.commonsCompress)
-    implementation(libs.commonsLang)
-    implementation(libs.commonsIo)
-    implementation(libs.groovyJson)
-    implementation(libs.httpcore)
-    implementation(libs.inject)
-    implementation(libs.ivy)
-    implementation(libs.jcifs)
-    implementation(libs.jetty)
-    implementation(libs.jettyServlet)
-    implementation(libs.littleproxy)
-    implementation(libs.mavenResolverSupplier) {
+    implementation(oldLibs.ansiControlSequenceUtil)
+    implementation(oldLibs.commonsCompress)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.groovyJson)
+    implementation(oldLibs.httpcore)
+    implementation(oldLibs.inject)
+    implementation(oldLibs.ivy)
+    implementation(oldLibs.jcifs)
+    implementation(oldLibs.jetty)
+    implementation(oldLibs.jettyServlet)
+    implementation(oldLibs.littleproxy)
+    implementation(oldLibs.mavenResolverSupplier) {
         because("For ApiMavenResolver. Wires together implementation for maven-resolver-api")
     }
-    implementation(libs.maven3ResolverProvider) {
+    implementation(oldLibs.maven3ResolverProvider) {
         because("For ApiMavenResolver. Provides MavenRepositorySystemUtils")
     }
-    implementation(libs.nativePlatform)
-    implementation(libs.netty)
-    implementation(libs.opentest4j)
+    implementation(oldLibs.nativePlatform)
+    implementation(oldLibs.netty)
+    implementation(oldLibs.opentest4j)
     // we depend on both: sshd platforms and libraries
-    implementation(libs.sshdCore)
-    implementation(platform(libs.sshdCore))
-    implementation(libs.sshdScp)
-    implementation(platform(libs.sshdScp))
-    implementation(libs.sshdSftp)
-    implementation(platform(libs.sshdSftp))
+    implementation(oldLibs.sshdCore)
+    implementation(platform(oldLibs.sshdCore))
+    implementation(oldLibs.sshdScp)
+    implementation(platform(oldLibs.sshdScp))
+    implementation(oldLibs.sshdSftp)
+    implementation(platform(oldLibs.sshdSftp))
 
     compileOnly(projects.configurationCache) {
         because("""Fixes:
@@ -146,16 +146,16 @@ dependencies {
             java.lang.AssertionError: typeSig ERROR""")
     }
 
-    runtimeOnly(libs.mavenResolverImpl) {
+    runtimeOnly(oldLibs.mavenResolverImpl) {
         because("For ApiMavenResolver. Implements maven-resolver-api")
     }
-    runtimeOnly(libs.mavenResolverConnectorBasic) {
+    runtimeOnly(oldLibs.mavenResolverConnectorBasic) {
         because("For ApiMavenResolver. To use resolver transporters")
     }
-    runtimeOnly(libs.mavenResolverTransportFile) {
+    runtimeOnly(oldLibs.mavenResolverTransportFile) {
         because("For ApiMavenResolver. To resolve file:// URLs")
     }
-    runtimeOnly(libs.mavenResolverTransportHttp) {
+    runtimeOnly(oldLibs.mavenResolverTransportHttp) {
         because("For ApiMavenResolver. To resolve http:// URLs")
     }
 

@@ -18,7 +18,7 @@ dependencies {
     testImplementation(projects.baseServices)
     testImplementation(projects.coreApi)
     testImplementation(projects.native)
-    testImplementation(libs.commonsCompress)
+    testImplementation(oldLibs.commonsCompress)
 
     integTestImplementation(projects.dependencyManagement)
     integTestImplementation(projects.logging)

@@ -1,7 +1,7 @@
 plugins {
     id("java-library")
 
-    //alias(libs.plugins.jacocolog) // Unfortunately it is not possible the version catalog in buildSrc code for plugins
+    //alias(oldLibs.plugins.jacocolog) // Unfortunately it is not possible the version catalog in buildSrc code for plugins
 
     // Remember that unlike regular Gradle projects, convention plugins in buildSrc do not automatically resolve
     // external plugins. We must declare them as dependencies in buildSrc/build.gradle.kts.
@@ -20,7 +20,7 @@ val libs = extensions.getByType(VersionCatalogsExtension::class.java).named("lib
 
 dependencies {
     // Access version catalog in buildSrc code for dependencies
-    implementation(libs.findLibrary("guava").get()) // Regular library from version catalog
+    implementation(oldLibs.findLibrary("guava").get()) // Regular library from version catalog
     testImplementation(platform("org.junit:junit-bom:5.9.1")) // Platform dependency
     testImplementation("org.junit.jupiter:junit-jupiter") // Direct dependency
 }

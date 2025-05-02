@@ -35,43 +35,43 @@ dependencies {
     api(projects.time)
     api(projects.toolingApi)
 
-    api(libs.gradleProfiler) {
+    api(oldLibs.gradleProfiler) {
         because("Consumers need to instantiate BuildMutators")
     }
-    api(libs.guava)
-    api(libs.groovy)
-    api(libs.jacksonAnnotations)
-    api(libs.jatl)
-    api(libs.jettyServer)
-    api(libs.jettyWebApp)
-    api(libs.jspecify)
-    api(libs.junit)
-    api(libs.spock)
+    api(oldLibs.guava)
+    api(oldLibs.groovy)
+    api(oldLibs.jacksonAnnotations)
+    api(oldLibs.jatl)
+    api(oldLibs.jettyServer)
+    api(oldLibs.jettyWebApp)
+    api(oldLibs.jspecify)
+    api(oldLibs.junit)
+    api(oldLibs.spock)
 
     implementation(projects.classloaders)
     implementation(projects.concurrent)
     implementation(projects.core)
     implementation(projects.wrapperShared)
 
-    implementation(libs.commonsIo)
-    implementation(libs.commonsLang)
-    implementation(libs.commonsMath)
-    implementation(libs.groovyJson)
-    implementation(libs.hikariCP)
-    implementation(libs.jacksonCore)
-    implementation(libs.jacksonDatabind)
-    implementation(libs.jettyUtil)
-    implementation(libs.joptSimple)
-    implementation(libs.mina)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.commonsMath)
+    implementation(oldLibs.groovyJson)
+    implementation(oldLibs.hikariCP)
+    implementation(oldLibs.jacksonCore)
+    implementation(oldLibs.jacksonDatabind)
+    implementation(oldLibs.jettyUtil)
+    implementation(oldLibs.joptSimple)
+    implementation(oldLibs.mina)
+    implementation(oldLibs.slf4jApi)
 
-    compileOnly(libs.javaParser) {
+    compileOnly(oldLibs.javaParser) {
         because("The Groovy compiler inspects the dependencies at compile time")
     }
 
-    runtimeOnly(libs.jclToSlf4j)
-    runtimeOnly(libs.jetty)
-    runtimeOnly(libs.mySqlConnector)
+    runtimeOnly(oldLibs.jclToSlf4j)
+    runtimeOnly(oldLibs.jetty)
+    runtimeOnly(oldLibs.mySqlConnector)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 }

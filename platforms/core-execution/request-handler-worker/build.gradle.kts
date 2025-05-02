@@ -26,7 +26,7 @@ dependencies {
     api(projects.serialization)
     api(projects.workerMain)
 
-    implementation(libs.jspecify)
+    implementation(oldLibs.jspecify)
 
     implementation(projects.modelCore)
     implementation(projects.persistentCache)
@@ -35,7 +35,7 @@ dependencies {
     implementation(projects.serviceProvider)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 
     runtimeOnly(projects.coreApi)
 }

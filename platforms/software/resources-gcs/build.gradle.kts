@@ -9,33 +9,33 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.resources)
 
-    api(libs.gcs)
-    api(libs.jspecify)
+    api(oldLibs.gcs)
+    api(oldLibs.jspecify)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.hashing)
     implementation(projects.loggingApi)
 
-    implementation(libs.commonsLang)
-    implementation(libs.googleApiClient)
-    implementation(libs.googleHttpClientGson)
-    implementation(libs.googleHttpClient)
-    implementation(libs.googleOauthClient)
-    implementation(libs.guava)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.googleApiClient)
+    implementation(oldLibs.googleHttpClientGson)
+    implementation(oldLibs.googleHttpClient)
+    implementation(oldLibs.googleOauthClient)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.dependencyManagement))
     testImplementation(testFixtures(projects.ivy))
     testImplementation(testFixtures(projects.maven))
 
-    testImplementation(libs.groovy)
+    testImplementation(oldLibs.groovy)
 
     integTestImplementation(projects.coreApi)
     integTestImplementation(projects.modelCore)
 
-    integTestImplementation(libs.commonsIo)
-    integTestImplementation(libs.jetty)
+    integTestImplementation(oldLibs.commonsIo)
+    integTestImplementation(oldLibs.jetty)
 
     integTestDistributionRuntimeOnly(projects.distributionsBasics)
 }

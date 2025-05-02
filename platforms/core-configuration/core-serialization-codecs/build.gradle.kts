@@ -39,8 +39,8 @@ dependencies {
     api(projects.modelCore)
     api(projects.snapshots)
 
-    api(libs.kotlinStdlib)
-    api(libs.slf4jApi)
+    api(oldLibs.kotlinStdlib)
+    api(oldLibs.slf4jApi)
 
     implementation(projects.baseServicesGroovy)
     implementation(projects.beanSerializationServices)
@@ -61,9 +61,9 @@ dependencies {
     implementation(projects.stdlibSerializationCodecs)
     implementation(projects.stdlibKotlinExtensions)
 
-    implementation(libs.asm)
-    implementation(libs.commonsLang)
-    implementation(libs.fastutil)
-    implementation(libs.groovy)
-    implementation(libs.guava)
+    implementation(oldLibs.asm)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.fastutil)
+    implementation(oldLibs.groovy)
+    implementation(oldLibs.guava)
 }

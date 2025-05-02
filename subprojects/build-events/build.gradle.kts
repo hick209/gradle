@@ -18,10 +18,10 @@ dependencies {
 
     implementation(projects.modelCore)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
-    implementation(libs.errorProneAnnotations)
-    implementation(libs.guava)
+    implementation(oldLibs.errorProneAnnotations)
+    implementation(oldLibs.guava)
 
     testImplementation(projects.internalTesting)
     testImplementation(projects.modelCore)

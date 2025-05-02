@@ -11,18 +11,18 @@ dependencies {
     api(projects.functional)
     api(projects.hashing)
 
-    api(libs.guava)
-    api(libs.jspecify)
-    api(libs.jsr305)
+    api(oldLibs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.jsr305)
 
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(projects.processServices)
     testImplementation(projects.resources)
     testImplementation(projects.native)
     testImplementation(projects.persistentCache)
-    testImplementation(libs.ant)
-    testImplementation(libs.commonsIo)
+    testImplementation(oldLibs.ant)
+    testImplementation(oldLibs.commonsIo)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.coreApi))
     testImplementation(testFixtures(projects.baseServices))
@@ -34,7 +34,7 @@ dependencies {
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.coreApi)
     testFixturesImplementation(projects.fileCollections)
-    testFixturesImplementation(libs.commonsIo)
+    testFixturesImplementation(oldLibs.commonsIo)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 }

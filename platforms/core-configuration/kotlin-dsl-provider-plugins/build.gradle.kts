@@ -15,8 +15,8 @@ dependencies {
     api(projects.persistentCache)
     api(projects.declarativeDslToolingModels)
 
-    api(libs.inject)
-    api(libs.kotlinStdlib)
+    api(oldLibs.inject)
+    api(oldLibs.kotlinStdlib)
 
     implementation(projects.baseServices)
     implementation(projects.concurrent)
@@ -37,17 +37,17 @@ dependencies {
     implementation(projects.declarativeDslProvider)
     implementation(projects.declarativeDslCore)
 
-    implementation(libs.futureKotlin("scripting-compiler-impl-embeddable")) {
+    implementation(oldLibs.futureKotlin("scripting-compiler-impl-embeddable")) {
         isTransitive = false
     }
-    implementation(libs.kotlinCompilerEmbeddable)
-    implementation(libs.jspecify)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.kotlinCompilerEmbeddable)
+    implementation(oldLibs.jspecify)
+    implementation(oldLibs.slf4jApi)
 
-    compileOnly(libs.kotlinReflect)
+    compileOnly(oldLibs.kotlinReflect)
 
     testImplementation(testFixtures(projects.kotlinDsl))
-    testImplementation(libs.mockitoKotlin)
+    testImplementation(oldLibs.mockitoKotlin)
 }
 
 packageCycles {

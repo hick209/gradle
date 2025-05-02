@@ -28,8 +28,8 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.kotlinStdlib)
-    api(libs.inject)
+    api(oldLibs.kotlinStdlib)
+    api(oldLibs.inject)
 
     implementation(projects.concurrent)
     implementation(projects.declarativeDslInternalUtils)
@@ -37,10 +37,10 @@ dependencies {
     implementation(projects.messaging)
     implementation(projects.resources)
     implementation(projects.serviceLookup)
-    implementation(libs.guava)
-    implementation(libs.kotlinReflect)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.kotlinReflect)
 
-    testImplementation(libs.mockitoKotlin)
+    testImplementation(oldLibs.mockitoKotlin)
     testImplementation(testFixtures(projects.declarativeDslCore))
     testImplementation(testFixtures(projects.declarativeDslEvaluator))
 

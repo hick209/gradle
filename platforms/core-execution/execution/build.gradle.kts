@@ -5,14 +5,14 @@ plugins {
 description = "Execution engine that takes a unit of work and makes it happen"
 
 dependencies {
-    api(libs.guava)
-    api(libs.jspecify)
-    api(libs.slf4jApi)
+    api(oldLibs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.slf4jApi)
 
     api(projects.concurrent)
     api(projects.stdlibJavaExtensions)
     api(projects.serialization)
-    compileOnly(libs.errorProneAnnotations)
+    compileOnly(oldLibs.errorProneAnnotations)
     api(projects.baseServices)
     api(projects.buildCache)
     api(projects.buildCacheBase)
@@ -34,16 +34,16 @@ dependencies {
         because("Adds generic build operations for the execution engine")
     }
 
-    implementation(libs.commonsLang)
-    implementation(libs.commonsIo)
-    implementation(libs.jsr305)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.jsr305)
 
     testImplementation(projects.native)
     testImplementation(projects.logging)
     testImplementation(projects.processServices)
     testImplementation(projects.baseServicesGroovy)
     testImplementation(projects.resources)
-    testImplementation(libs.commonsIo)
+    testImplementation(oldLibs.commonsIo)
     testImplementation(testFixtures(projects.serialization))
     testImplementation(testFixtures(projects.baseServices))
     testImplementation(testFixtures(projects.buildOperations))
@@ -53,7 +53,7 @@ dependencies {
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.modelReflect))
 
-    testFixturesImplementation(libs.guava)
+    testFixturesImplementation(oldLibs.guava)
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.buildCache)
     testFixturesImplementation(projects.problems)

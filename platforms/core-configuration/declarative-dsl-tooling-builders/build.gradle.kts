@@ -8,7 +8,7 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.core)
 
-    api(libs.kotlinStdlib)
+    api(oldLibs.kotlinStdlib)
 
     implementation(projects.coreApi)
     implementation(projects.declarativeDslEvaluator)

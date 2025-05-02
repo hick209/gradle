@@ -18,14 +18,14 @@ dependencies {
     api(projects.files)
     api(projects.snapshots)
 
-    api(libs.jspecify)
-    api(libs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.guava)
     api("org.gradle:java-api-extractor")
 
     implementation(projects.functional)
 
-    implementation(libs.slf4jApi)
-    implementation(libs.commonsIo)
+    implementation(oldLibs.slf4jApi)
+    implementation(oldLibs.commonsIo)
 
     testImplementation(projects.baseServices)
     testImplementation(projects.internalTesting)

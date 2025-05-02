@@ -11,7 +11,7 @@ gradleModule {
 }
 
 dependencies {
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     implementation(projects.stdlibJavaExtensions)
 }

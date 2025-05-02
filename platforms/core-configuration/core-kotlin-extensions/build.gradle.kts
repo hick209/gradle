@@ -14,7 +14,7 @@ dependencies {
     api(projects.hashing)
     api(projects.loggingApi)
 
-    api(libs.kotlinStdlib)
+    api(oldLibs.kotlinStdlib)
 
     implementation(projects.messaging)
     implementation(projects.resources)

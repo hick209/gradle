@@ -28,20 +28,20 @@ dependencies {
     api(projects.testingBaseInfrastructure)
     api(projects.time)
 
-    api(libs.groovy)
-    api(libs.guava)
-    api(libs.jspecify)
-    api(libs.inject)
+    api(oldLibs.groovy)
+    api(oldLibs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.inject)
 
     implementation(projects.baseServicesGroovy)
     implementation(projects.concurrent)
     implementation(projects.files)
     implementation(projects.modelCore)
 
-    implementation(libs.commonsLang)
-    implementation(libs.commonsIo)
-    implementation(libs.kryo)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.kryo)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(projects.fileCollections)
     testImplementation(projects.enterpriseOperations)
@@ -53,15 +53,15 @@ dependencies {
     testImplementation(testFixtures(projects.serialization))
     testImplementation(testFixtures(projects.time))
 
-    testImplementation(libs.commonsIo)
+    testImplementation(oldLibs.commonsIo)
 
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(projects.logging)
     testFixturesImplementation(projects.modelCore)
 
-    testFixturesImplementation(libs.guava)
-    testFixturesImplementation(libs.jsoup)
+    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(oldLibs.jsoup)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("ProjectBuilder tests load services from a Gradle distribution.")

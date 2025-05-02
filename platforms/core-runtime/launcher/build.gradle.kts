@@ -46,8 +46,8 @@ dependencies {
     api(projects.clientServices)
     api(projects.daemonServices)
 
-    api(libs.guava)
-    api(libs.jspecify)
+    api(oldLibs.guava)
+    api(oldLibs.jspecify)
 
     implementation(projects.buildProcessServices)
     implementation(projects.enterpriseOperations)
@@ -55,15 +55,15 @@ dependencies {
     implementation(projects.io)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.slf4jApi)
 
     runtimeOnly(projects.gradleCliMain)
     runtimeOnly(projects.declarativeDslProvider)
     runtimeOnly(projects.problems)
 
-    runtimeOnly(libs.commonsIo)
-    runtimeOnly(libs.commonsLang)
-    runtimeOnly(libs.slf4jApi)
+    runtimeOnly(oldLibs.commonsIo)
+    runtimeOnly(oldLibs.commonsLang)
+    runtimeOnly(oldLibs.slf4jApi)
 
     // The wrapper expects the launcher Jar to have classpath entries that contain the main class and its runtime classpath
     manifestClasspath(projects.gradleCliMain)
@@ -77,10 +77,10 @@ dependencies {
     testImplementation(testFixtures(projects.daemonProtocol))
 
     integTestImplementation(projects.persistentCache)
-    integTestImplementation(libs.slf4jApi)
-    integTestImplementation(libs.guava)
-    integTestImplementation(libs.commonsLang)
-    integTestImplementation(libs.commonsIo)
+    integTestImplementation(oldLibs.slf4jApi)
+    integTestImplementation(oldLibs.guava)
+    integTestImplementation(oldLibs.commonsLang)
+    integTestImplementation(oldLibs.commonsIo)
     integTestImplementation(testFixtures(projects.buildConfiguration))
     integTestImplementation(testFixtures(projects.buildProcessServices))
     integTestImplementation(testFixtures(projects.toolchainsJvmShared))

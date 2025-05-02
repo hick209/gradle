@@ -24,7 +24,7 @@ dependencies {
     api(projects.processMemoryServices)
     api(projects.native)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     implementation(projects.classloaders)
     implementation(projects.concurrent)
@@ -32,7 +32,7 @@ dependencies {
     implementation(projects.serviceProvider)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(testFixtures(projects.core))
 }

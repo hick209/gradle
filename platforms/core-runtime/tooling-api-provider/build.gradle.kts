@@ -36,6 +36,6 @@ dependencies {
     implementation(projects.serviceRegistryBuilder)
     implementation(projects.stdlibJavaExtensions)
 
-    implementation(libs.jspecify)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.jspecify)
+    implementation(oldLibs.slf4jApi)
 }

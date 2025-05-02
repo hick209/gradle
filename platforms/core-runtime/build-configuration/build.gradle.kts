@@ -5,8 +5,8 @@ plugins {
 description = "The Build configuration properties modifiers and helpers."
 
 dependencies {
-    api(libs.jspecify)
-    api(libs.inject)
+    api(oldLibs.jspecify)
+    api(oldLibs.inject)
 
     api(projects.core)
     api(projects.coreApi)

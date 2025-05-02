@@ -8,9 +8,9 @@ dependencies {
     api(projects.baseServices)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.jspecify)
-    api(libs.groovy)
-    api(libs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.guava)
 
     testImplementation(testFixtures(projects.core))
 }

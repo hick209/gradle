@@ -11,21 +11,21 @@ dependencies {
     api(projects.resources)
     api(projects.resourcesHttp)
 
-    api(libs.awsS3Core)
-    api(libs.awsS3S3)
-    api(libs.awsS3Kms) {
+    api(oldLibs.awsS3Core)
+    api(oldLibs.awsS3S3)
+    api(oldLibs.awsS3Kms) {
         because("Loaded by the AWS libraries with reflection when present")
     }
-    api(libs.awsS3Sts) {
+    api(oldLibs.awsS3Sts) {
         because("Loaded by the AWS libraries with reflection when present: https://github.com/gradle/gradle/issues/15332")
     }
-    api(libs.guava)
+    api(oldLibs.guava)
 
     implementation(projects.baseServices)
     implementation(projects.hashing)
 
-    implementation(libs.commonsLang)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.dependencyManagement))
@@ -33,10 +33,10 @@ dependencies {
     testImplementation(testFixtures(projects.maven))
 
     integTestImplementation(projects.logging)
-    integTestImplementation(libs.commonsIo)
-    integTestImplementation(libs.groovyXml)
-    integTestImplementation(libs.littleproxy)
-    integTestImplementation(libs.jetty)
+    integTestImplementation(oldLibs.commonsIo)
+    integTestImplementation(oldLibs.groovyXml)
+    integTestImplementation(oldLibs.littleproxy)
+    integTestImplementation(oldLibs.jetty)
 
     integTestDistributionRuntimeOnly(projects.distributionsBasics)
 }
@@ -46,8 +46,8 @@ dependencyAnalysis {
     issues {
         onUnusedDependencies() {
             // This need to exist to be loaded reflectively
-            exclude(libs.awsS3Kms)
-            exclude(libs.awsS3Sts)
+            exclude(oldLibs.awsS3Kms)
+            exclude(oldLibs.awsS3Sts)
         }
     }
 }

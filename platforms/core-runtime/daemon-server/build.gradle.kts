@@ -25,7 +25,7 @@ dependencies {
     api(projects.logging)
     api(projects.messaging)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 
     implementation(projects.classloaders)
     implementation(projects.concurrent)

@@ -27,30 +27,30 @@ dependencies {
     api(projects.serviceLookup)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.inject)
-    api(libs.jspecify)
-    api(libs.guava)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
+    api(oldLibs.guava)
 
     implementation(projects.time)
     implementation(projects.baseAsm)
 
-    implementation(libs.commonsIo)
-    implementation(libs.commonsLang)
-    implementation(libs.jsr305)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.jsr305)
+    implementation(oldLibs.slf4jApi)
 
     integTestImplementation(projects.logging)
 
     testFixturesApi(projects.hashing)
-    testFixturesImplementation(libs.guava)
+    testFixturesImplementation(oldLibs.guava)
     testImplementation(testFixtures(projects.core))
-    testImplementation(libs.xerces)
+    testImplementation(oldLibs.xerces)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 
     jmh(platform(projects.distributionsDependencies))
-    jmh(libs.bouncycastleProvider)
-    jmh(libs.guava)
+    jmh(oldLibs.bouncycastleProvider)
+    jmh(oldLibs.guava)
 }
 
 packageCycles {

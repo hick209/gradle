@@ -15,16 +15,16 @@ dependencies {
     api(projects.serialization)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     implementation(projects.io)
     implementation(projects.time)
 
-    implementation(libs.guava)
-    implementation(libs.jsr305)
-    implementation(libs.slf4jApi)
-    implementation(libs.commonsIo)
-    implementation(libs.commonsLang)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jsr305)
+    implementation(oldLibs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.commonsLang)
 
     testImplementation(projects.messaging)
     testImplementation(projects.coreApi)

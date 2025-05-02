@@ -36,14 +36,14 @@ dependencies {
     api(projects.hashing)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     implementation(projects.concurrent)
     implementation(projects.io)
 
-    implementation(libs.commonsIo)
-    implementation(libs.commonsLang)
-    implementation(libs.guava)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.guava)
 
-    compileOnly(libs.errorProneAnnotations)
+    compileOnly(oldLibs.errorProneAnnotations)
 }

@@ -8,14 +8,14 @@ dependencies {
     api(projects.classloaders)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     implementation(projects.baseServices)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 
-    testImplementation(libs.asm)
-    testImplementation(libs.asmTree)
+    testImplementation(oldLibs.asm)
+    testImplementation(oldLibs.asmTree)
 
     testRuntimeOnly(projects.resources)
 }

@@ -55,14 +55,14 @@ dependencies {
     api(projects.scopedPersistentCache)
     api(projects.serviceLookup)
 
-    api(libs.commonsCompress)
-    api(libs.groovy)
-    api(libs.guava)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.commonsCompress)
+    api(oldLibs.groovy)
+    api(oldLibs.guava)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
-    implementation(libs.ant)
-    implementation(libs.commonsIo)
-    implementation(libs.groovyTemplates)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.ant)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.groovyTemplates)
+    implementation(oldLibs.slf4jApi)
 }

@@ -15,5 +15,5 @@ dependencies {
     api(projects.loggingApi)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 }

@@ -21,8 +21,8 @@ plugins {
 description = "Declarations to define JVM toolchains shared between launcher and daemon"
 
 dependencies {
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     api(projects.stdlibJavaExtensions)
     api(projects.baseServices)
@@ -39,9 +39,9 @@ dependencies {
     implementation(projects.functional)
 
     implementation(projects.logging)
-    implementation(libs.guava)
-    implementation(libs.slf4jApi)
-    implementation(libs.commonsIo)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.slf4jApi)
+    implementation(oldLibs.commonsIo)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(projects.dependencyManagement)
@@ -51,7 +51,7 @@ dependencies {
     }
 
     testFixturesImplementation(projects.internalIntegTesting)
-    testFixturesImplementation(libs.commonsCompress)
+    testFixturesImplementation(oldLibs.commonsCompress)
 }
 
 packageCycles {

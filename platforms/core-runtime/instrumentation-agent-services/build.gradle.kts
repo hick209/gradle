@@ -26,8 +26,8 @@ dependencies {
     implementation(projects.classloaders)
     implementation(projects.functional)
 
-    implementation(libs.jspecify)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.jspecify)
+    implementation(oldLibs.slf4jApi)
 
     integTestImplementation(projects.launcher)
     integTestDistributionRuntimeOnly(projects.distributionsCore)

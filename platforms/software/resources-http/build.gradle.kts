@@ -12,30 +12,30 @@ dependencies {
     api(projects.logging)
     api(projects.resources)
 
-    api(libs.commonsHttpclient)
-    api(libs.httpcore)
-    api(libs.jspecify)
+    api(oldLibs.commonsHttpclient)
+    api(oldLibs.httpcore)
+    api(oldLibs.jspecify)
 
     implementation(projects.baseServices)
     implementation(projects.hashing)
     implementation(projects.loggingApi)
 
-    implementation(libs.commonsIo)
-    implementation(libs.commonsLang)
-    implementation(libs.guava)
-    implementation(libs.jcifs)
-    implementation(libs.jsoup)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jcifs)
+    implementation(oldLibs.jsoup)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(projects.internalIntegTesting)
-    testImplementation(libs.jettyWebApp)
+    testImplementation(oldLibs.jettyWebApp)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.logging))
 
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.logging)
     testFixturesImplementation(projects.internalIntegTesting)
-    testFixturesImplementation(libs.slf4jApi)
+    testFixturesImplementation(oldLibs.slf4jApi)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 }

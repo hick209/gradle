@@ -28,8 +28,8 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.loggingApi)
 
-    api(libs.kotlinStdlib)
-    api(libs.inject)
+    api(oldLibs.kotlinStdlib)
+    api(oldLibs.inject)
 
     implementation(projects.baseServices)
     implementation(projects.serviceLookup)

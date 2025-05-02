@@ -18,13 +18,13 @@ dependencies {
     integTestImplementation(projects.gradleCliMain)
     integTestImplementation(projects.launcher)
     integTestImplementation(projects.idePlugins)
-    integTestImplementation(libs.groovy)
-    integTestImplementation(libs.slf4jApi)
-    integTestImplementation(libs.guava)
-    integTestImplementation(libs.ant)
-    integTestImplementation(libs.jsoup)
+    integTestImplementation(oldLibs.groovy)
+    integTestImplementation(oldLibs.slf4jApi)
+    integTestImplementation(oldLibs.guava)
+    integTestImplementation(oldLibs.ant)
+    integTestImplementation(oldLibs.jsoup)
 
-    integTestImplementation(libs.samplesCheck) {
+    integTestImplementation(oldLibs.samplesCheck) {
         exclude(group = "org.codehaus.groovy", module = "groovy-all")
     }
     integTestImplementation(testFixtures(projects.modelReflect))
@@ -50,8 +50,8 @@ dependencies {
     integTestImplementation(testFixtures(projects.core))
     integTestImplementation(testFixtures(projects.scala))
     integTestImplementation(testFixtures(projects.platformNative))
-    integTestImplementation(libs.jgit)
-    integTestImplementation(libs.javaParser) {
+    integTestImplementation(oldLibs.jgit)
+    integTestImplementation(oldLibs.javaParser) {
         because("The Groovy compiler inspects the dependencies at compile time")
     }
 

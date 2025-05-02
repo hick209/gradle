@@ -25,8 +25,8 @@ dependencies {
     api(projects.workerMain)
     api(projects.workers)
 
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.classloaders)
     implementation(projects.concurrent)
@@ -36,9 +36,9 @@ dependencies {
     implementation(projects.logging)
     implementation(projects.loggingApi)
 
-    implementation(libs.groovy)
-    implementation(libs.guava)
-    implementation(libs.asm)
+    implementation(oldLibs.groovy)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.asm)
 
     testImplementation(projects.baseServicesGroovy)
     testImplementation(projects.internalTesting)
@@ -50,14 +50,14 @@ dependencies {
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(testFixtures(projects.modelReflect))
-    testFixturesImplementation(libs.guava)
+    testFixturesImplementation(oldLibs.guava)
 
     integTestImplementation(testFixtures(projects.modelReflect))
-    integTestImplementation(libs.commonsLang)
-    integTestImplementation(libs.javaParser) {
+    integTestImplementation(oldLibs.commonsLang)
+    integTestImplementation(oldLibs.javaParser) {
         because("The Groovy docs inspects the dependencies at compile time")
     }
-    integTestImplementation(libs.nativePlatform) {
+    integTestImplementation(oldLibs.nativePlatform) {
         because("Required for SystemInfo")
     }
 

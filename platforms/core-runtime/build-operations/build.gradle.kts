@@ -15,11 +15,11 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.time)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.slf4jApi)
 
-    testFixturesImplementation(libs.guava)
+    testFixturesImplementation(oldLibs.guava)
 
     testImplementation(testFixtures(projects.time))
 }

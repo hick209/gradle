@@ -18,12 +18,12 @@ dependencies {
     api(projects.messaging)
     api(projects.native)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     implementation(projects.files)
 
-    implementation(libs.guava)
-    implementation(libs.commonsIo)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.commonsIo)
 
     testImplementation(projects.processServices)
     testImplementation(projects.coreApi)

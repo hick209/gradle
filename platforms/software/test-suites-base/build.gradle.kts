@@ -16,10 +16,10 @@ dependencies {
     api(projects.modelCore)
     api(projects.platformBase)
 
-    api(libs.inject)
+    api(oldLibs.inject)
 
-    implementation(libs.commonsLang)
-    implementation(libs.jspecify)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.jspecify)
 
     testImplementation(testFixtures(projects.baseServices))
     testImplementation(testFixtures(projects.core))

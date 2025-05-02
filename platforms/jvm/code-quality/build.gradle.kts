@@ -33,9 +33,9 @@ dependencies {
     api(projects.toolchainsJvmShared)
     api(projects.workers)
 
-    api(libs.groovy)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.daemonServerWorker)
     implementation(projects.logging)
@@ -45,10 +45,10 @@ dependencies {
 
     compileOnly(projects.internalInstrumentationApi)
 
-    implementation(libs.groovyXml)
-    implementation(libs.guava)
-    implementation(libs.slf4jApi)
-    implementation(libs.commonsIo)
+    implementation(oldLibs.groovyXml)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.slf4jApi)
+    implementation(oldLibs.commonsIo)
 
     runtimeOnly(projects.languageJvm)
 
@@ -68,7 +68,7 @@ dependencies {
     integTestDistributionRuntimeOnly(projects.distributionsFull)
 
     integTestImplementation(testFixtures(projects.languageGroovy))
-    integTestImplementation(libs.jsoup) {
+    integTestImplementation(oldLibs.jsoup) {
         because("We need to validate generated HTML reports")
     }
 }

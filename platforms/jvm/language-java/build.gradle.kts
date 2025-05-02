@@ -48,12 +48,12 @@ dependencies {
     api(projects.workerMain)
     api(projects.workers)
 
-    api(libs.asm)
-    api(libs.fastutil)
-    api(libs.groovy)
-    api(libs.guava)
-    api(libs.jspecify)
-    api(libs.inject)
+    api(oldLibs.asm)
+    api(oldLibs.fastutil)
+    api(oldLibs.groovy)
+    api(oldLibs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.inject)
 
     implementation(projects.concurrent)
     implementation(projects.serviceLookup)
@@ -63,10 +63,10 @@ dependencies {
     implementation(projects.problemsRendering)
     implementation(projects.toolingApi)
 
-    api(libs.slf4jApi)
-    implementation(libs.commonsLang)
-    implementation(libs.ant)
-    implementation(libs.commonsCompress)
+    api(oldLibs.slf4jApi)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.ant)
+    implementation(oldLibs.commonsCompress)
 
     runtimeOnly(projects.javaCompilerPlugin)
 
@@ -78,8 +78,8 @@ dependencies {
     testImplementation(testFixtures(projects.toolchainsJvm))
     testImplementation(testFixtures(projects.toolchainsJvmShared))
 
-    testImplementation(libs.commonsIo)
-    testImplementation(libs.nativePlatform) {
+    testImplementation(oldLibs.commonsIo)
+    testImplementation(oldLibs.nativePlatform) {
         because("Required for SystemInfo")
     }
 
@@ -87,8 +87,8 @@ dependencies {
     integTestImplementation(testFixtures(projects.buildProcessServices))
 
     // TODO: Make these available for all integration tests? Maybe all tests?
-    integTestImplementation(libs.jetbrainsAnnotations)
-    integTestImplementation(libs.commonsHttpclient)
+    integTestImplementation(oldLibs.jetbrainsAnnotations)
+    integTestImplementation(oldLibs.commonsHttpclient)
 
     testFixturesApi(testFixtures(projects.languageJvm))
     testFixturesImplementation(projects.baseServices)
@@ -99,7 +99,7 @@ dependencies {
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(projects.platformBase)
     testFixturesImplementation(projects.persistentCache)
-    testFixturesImplementation(libs.slf4jApi)
+    testFixturesImplementation(oldLibs.slf4jApi)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("ProjectBuilder test (JavaLanguagePluginTest) loads services from a Gradle distribution.")

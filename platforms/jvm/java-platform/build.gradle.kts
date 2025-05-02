@@ -23,7 +23,7 @@ description = "Adds support for creating dependency platforms for JVM projects"
 dependencies {
     api(projects.coreApi)
 
-    api(libs.inject)
+    api(oldLibs.inject)
 
     implementation(projects.baseServices)
     implementation(projects.core)
@@ -35,7 +35,7 @@ dependencies {
     implementation(projects.platformJvm)
     implementation(projects.publish)
 
-    runtimeOnly(libs.groovy)
+    runtimeOnly(oldLibs.groovy)
 
     integTestImplementation(testFixtures(projects.dependencyManagement))
     integTestImplementation(testFixtures(projects.resourcesHttp))

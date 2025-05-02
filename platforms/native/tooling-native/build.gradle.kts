@@ -19,7 +19,7 @@ dependencies {
     implementation(projects.platformNative)
     implementation(projects.testingNative)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 
     testImplementation(testFixtures(projects.platformNative))
 

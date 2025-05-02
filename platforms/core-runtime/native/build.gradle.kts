@@ -20,15 +20,15 @@ dependencies {
     api(projects.serviceRegistryBuilder)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.inject)
-    api(libs.jspecify)
-    api(libs.nativePlatform)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
+    api(oldLibs.nativePlatform)
 
-    implementation(libs.gradleFileEvents)
-    implementation(libs.slf4jApi)
-    implementation(libs.guava)
-    implementation(libs.commonsIo)
-    implementation(libs.jansi)
+    implementation(oldLibs.gradleFileEvents)
+    implementation(oldLibs.slf4jApi)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.jansi)
 
     testImplementation(testFixtures(projects.files))
     testImplementation(testFixtures(projects.core))

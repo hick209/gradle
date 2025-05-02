@@ -21,18 +21,18 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     api(projects.declarativeDslToolingModels)
 
-    api(libs.kotlinStdlib)
-    api(libs.kotlinCompilerEmbeddable)
+    api(oldLibs.kotlinStdlib)
+    api(oldLibs.kotlinCompilerEmbeddable)
 
     implementation(projects.declarativeDslApi)
-    implementation(libs.kotlinReflect)
-    implementation(libs.kotlinxSerializationCore)
-    implementation(libs.kotlinxSerializationJson)
+    implementation(oldLibs.kotlinReflect)
+    implementation(oldLibs.kotlinxSerializationCore)
+    implementation(oldLibs.kotlinxSerializationJson)
 
     testImplementation(projects.coreApi)
     testImplementation("org.jetbrains:annotations:24.0.1")
 
-    testFixturesImplementation(libs.kotlinReflect)
+    testFixturesImplementation(oldLibs.kotlinReflect)
 
     integTestImplementation(testFixtures(projects.kotlinDsl))
 

@@ -31,24 +31,24 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.groovy)
-    api(libs.jspecify)
-    api(libs.inject)
+    api(oldLibs.groovy)
+    api(oldLibs.jspecify)
+    api(oldLibs.inject)
 
     implementation(projects.functional)
     implementation(projects.loggingApi)
 
-    implementation(libs.commonsLang)
-    implementation(libs.groovyJson)
-    implementation(libs.guava)
-    implementation(libs.jatl)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.groovyJson)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jatl)
 
     testFixturesApi(testFixtures(projects.platformNative))
     testFixturesApi(testFixtures(projects.logging))
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.core)
     testFixturesImplementation(projects.internalIntegTesting)
-    testFixturesImplementation(libs.guava)
+    testFixturesImplementation(oldLibs.guava)
 
     testImplementation(projects.processServices)
     testImplementation(testFixtures(projects.core))
@@ -62,8 +62,8 @@ dependencies {
     integTestImplementation(testFixtures(projects.baseDiagnostics))
     integTestImplementation(testFixtures(projects.platformNative))
 
-    integTestImplementation(libs.jsoup)
-    integTestImplementation(libs.jetty)
+    integTestImplementation(oldLibs.jsoup)
+    integTestImplementation(oldLibs.jetty)
 
     integTestDistributionRuntimeOnly(projects.distributionsFull)
 }

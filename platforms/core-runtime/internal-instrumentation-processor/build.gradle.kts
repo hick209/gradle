@@ -21,25 +21,25 @@ plugins {
 dependencies {
     api(projects.internalInstrumentationApi)
 
-    api(libs.asm)
-    api(libs.javaPoet)
-    api(libs.jspecify)
+    api(oldLibs.asm)
+    api(oldLibs.javaPoet)
+    api(oldLibs.jspecify)
 
-    implementation(libs.asmTree)
-    implementation(libs.jacksonAnnotations)
-    implementation(libs.jacksonDatabind)
-    implementation(libs.guava)
+    implementation(oldLibs.asmTree)
+    implementation(oldLibs.jacksonAnnotations)
+    implementation(oldLibs.jacksonDatabind)
+    implementation(oldLibs.guava)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.baseAsm)
 
-    testCompileOnly(libs.jetbrainsAnnotations)
+    testCompileOnly(oldLibs.jetbrainsAnnotations)
 
-    testImplementation(libs.compileTesting)
+    testImplementation(oldLibs.compileTesting)
     testImplementation(projects.core)
     testImplementation(testFixtures(projects.core))
     // TODO remove this
-    testImplementation(libs.jetbrainsAnnotations)
+    testImplementation(oldLibs.jetbrainsAnnotations)
     testRuntimeOnly(projects.distributionsCore) {
         because("Because we use TestUtil")
     }

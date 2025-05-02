@@ -11,8 +11,8 @@ dependencies {
     // Platform
     implementation(platform(project(":platform")))
     // Catalog
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.jupiter.launcher)
-    implementation(libs.guava)
+    testImplementation(oldLibs.junit.jupiter)
+    testRuntimeOnly(oldLibs.junit.jupiter.launcher)
+    implementation(oldLibs.guava)
 }
 // end::usage[]

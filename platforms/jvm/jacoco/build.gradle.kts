@@ -21,9 +21,9 @@ dependencies {
     api(projects.reporting)
     api(projects.workers)
 
-    api(libs.groovy)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.daemonServerWorker)
     implementation(projects.loggingApi)
@@ -36,16 +36,16 @@ dependencies {
     implementation(projects.testSuitesBase)
     implementation(projects.testingJvm)
 
-    implementation(libs.commonsLang)
-    implementation(libs.guava)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.guava)
 
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.coreApi)
     testFixturesImplementation(projects.core)
     testFixturesImplementation(projects.internalIntegTesting)
 
-    testFixturesImplementation(libs.jsoup)
-    testFixturesImplementation(libs.groovyXml)
+    testFixturesImplementation(oldLibs.jsoup)
+    testFixturesImplementation(oldLibs.groovyXml)
 
     testImplementation(projects.internalTesting)
     testImplementation(projects.resources)

@@ -15,8 +15,8 @@ dependencies {
     implementation(projects.testingJvm)
     implementation(projects.workers)
 
-    implementation(libs.commonsIo)
-    implementation(libs.guava)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.guava)
 
     api(projects.baseServices)
     api(projects.buildEvents)
@@ -28,10 +28,10 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.toolingApi)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     runtimeOnly(projects.compositeBuilds)
-    runtimeOnly(libs.groovy) // for 'Closure'
+    runtimeOnly(oldLibs.groovy) // for 'Closure'
 
     testCompileOnly(projects.toolchainsJvm) {
         because("JavaLauncher is required for mocking Test.")

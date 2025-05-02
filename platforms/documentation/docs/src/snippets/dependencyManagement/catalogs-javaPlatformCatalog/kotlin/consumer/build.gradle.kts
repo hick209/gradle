@@ -19,5 +19,5 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.myGroovy)
+    implementation(oldLibs.myGroovy)
 }

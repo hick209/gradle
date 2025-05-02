@@ -23,8 +23,8 @@ dependencies {
     api(projects.testingJvm)
     api(projects.time)
 
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.concurrent)
     implementation(projects.dependencyManagement)
@@ -33,9 +33,9 @@ dependencies {
     implementation(projects.serialization)
     implementation(projects.testingBase)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 
-    compileOnly(libs.groovy) {
+    compileOnly(oldLibs.groovy) {
         because("some used APIs (e.g. FileTree.visit) provide methods taking Groovy closures which causes compile errors")
     }
 
@@ -52,7 +52,7 @@ dependencies {
     integTestImplementation(projects.persistentCache)
     integTestImplementation(projects.native)
     integTestImplementation(testFixtures(projects.problemsApi))
-    integTestImplementation(libs.guava)
+    integTestImplementation(oldLibs.guava)
 
     integTestDistributionRuntimeOnly(projects.distributionsFull)
 }

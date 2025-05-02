@@ -20,16 +20,16 @@ dependencies {
     api(projects.requestHandlerWorker)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.baseServices)
     implementation(projects.platformJvm)
     implementation(projects.pluginsJavaBase)
     implementation(projects.pluginsJavaLibrary)
 
-    implementation(libs.guava)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.slf4jApi)
 
     compileOnly("antlr:antlr:2.7.7") {
         because("this dependency is downloaded by the antlr plugin")

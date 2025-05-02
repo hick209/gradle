@@ -67,18 +67,18 @@ dependencies {
 
     testImplementation(project(":base-services"))
     testImplementation(project(":core"))
-    testImplementation(libs.jsoup)
+    testImplementation(oldLibs.jsoup)
     testImplementation("org.seleniumhq.selenium:selenium-htmlunit-driver:2.42.2")
-    testImplementation(libs.commonsHttpclient)
-    testImplementation(libs.httpmime)
+    testImplementation(oldLibs.commonsHttpclient)
+    testImplementation(oldLibs.httpmime)
 
     docsTestImplementation(platform(project(":distributions-dependencies")))
     docsTestImplementation(project(":internal-integ-testing"))
     docsTestImplementation(project(":base-services"))
     docsTestImplementation(project(":logging"))
-    docsTestImplementation(libs.junit5Vintage)
-    docsTestImplementation(libs.junit)
-    docsTestRuntimeOnly(libs.junitPlatform)
+    docsTestImplementation(oldLibs.junit5Vintage)
+    docsTestImplementation(oldLibs.junit)
+    docsTestRuntimeOnly(oldLibs.junitPlatform)
 
     integTestDistributionRuntimeOnly(project(":distributions-full"))
 }
@@ -110,7 +110,7 @@ tasks.withType<AsciidoctorTask>().configureEach {
 gradleDocumentation {
     javadocs {
         javaApi = project.uri("https://docs.oracle.com/javase/8/docs/api")
-        groovyApi = project.uri("https://docs.groovy-lang.org/docs/groovy-${libs.groovyVersion}/html/gapi")
+        groovyApi = project.uri("https://docs.groovy-lang.org/docs/groovy-${oldLibs.groovyVersion}/html/gapi")
     }
 }
 

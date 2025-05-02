@@ -29,11 +29,11 @@ dependencies {
     api(projects.toolchainsJvm)
     api(projects.toolchainsJvmShared)
 
-    api(libs.asm)
-    api(libs.groovy)
-    api(libs.groovyXml)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.asm)
+    api(oldLibs.groovy)
+    api(oldLibs.groovyXml)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.classloaders)
     implementation(projects.concurrent)
@@ -44,12 +44,12 @@ dependencies {
     implementation(projects.serviceLookup)
     implementation(projects.testingJvmInfrastructure)
 
-    implementation(libs.commonsIo)
-    implementation(libs.commonsLang)
-    implementation(libs.guava)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.slf4jApi)
 
-    compileOnly(libs.junit) {
+    compileOnly(oldLibs.junit) {
         because("The actual version is provided by the user on the testRuntimeClasspath")
     }
 

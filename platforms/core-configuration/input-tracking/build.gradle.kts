@@ -5,8 +5,8 @@ plugins {
 description = "Configuration input discovery code"
 
 dependencies {
-    api(libs.jspecify)
-    api(libs.guava)
+    api(oldLibs.jspecify)
+    api(oldLibs.guava)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 }

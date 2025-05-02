@@ -15,16 +15,16 @@ dependencies {
 
     performanceTestImplementation(testFixtures(projects.toolingApi))
 
-    performanceTestImplementation(libs.commonsLang)
-    performanceTestImplementation(libs.commonsIo)
-    performanceTestImplementation(libs.gradleProfiler)
-    performanceTestImplementation(libs.jettyServer)
-    performanceTestImplementation(libs.jettyWebApp)
-    performanceTestImplementation(libs.junit)
-    performanceTestImplementation(libs.servletApi)
+    performanceTestImplementation(oldLibs.commonsLang)
+    performanceTestImplementation(oldLibs.commonsIo)
+    performanceTestImplementation(oldLibs.gradleProfiler)
+    performanceTestImplementation(oldLibs.jettyServer)
+    performanceTestImplementation(oldLibs.jettyWebApp)
+    performanceTestImplementation(oldLibs.junit)
+    performanceTestImplementation(oldLibs.servletApi)
 
     performanceTestRuntimeOnly(projects.coreApi)
-    performanceTestRuntimeOnly(libs.jetty)
+    performanceTestRuntimeOnly(oldLibs.jetty)
 
     performanceTestDistributionRuntimeOnly(projects.distributionsFull) {
         because("All Gradle features have to be available.")
@@ -37,7 +37,7 @@ dependencies {
 dependencyAnalysis {
     issues {
         onUnusedDependencies {
-            exclude(libs.junitJupiter)
+            exclude(oldLibs.junitJupiter)
         }
 
         ignoreSourceSet(sourceSets.performanceTest.name)

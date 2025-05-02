@@ -26,12 +26,12 @@ dependencies {
 
     implementation(projects.loggingApi)
 
-    implementation(libs.jspecify)
+    implementation(oldLibs.jspecify)
 
     testImplementation(testFixtures(project))
     testImplementation(testFixtures(projects.logging))
 
-    testFixturesImplementation(libs.commonsLang)
+    testFixturesImplementation(oldLibs.commonsLang)
 }
 
 testing {

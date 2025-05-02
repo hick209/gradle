@@ -27,20 +27,20 @@ dependencies {
     api(projects.serviceLookup)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.groovy)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.fileCollections)
 
-    implementation(libs.guava)
-    implementation(libs.jatl)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jatl)
 
     implementationResources("jquery:jquery.min:3.5.1@js")
 
     testImplementation(projects.processServices)
     testImplementation(projects.baseServicesGroovy)
-    testImplementation(libs.jsoup)
+    testImplementation(oldLibs.jsoup)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.jacoco))
 

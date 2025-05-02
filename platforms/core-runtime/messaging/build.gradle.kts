@@ -17,21 +17,21 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.baseServices)
 
-    api(libs.jspecify)
-    api(libs.slf4jApi)
+    api(oldLibs.jspecify)
+    api(oldLibs.slf4jApi)
 
     implementation(projects.classloaders)
     implementation(projects.io)
     implementation(projects.buildOperations)
 
-    implementation(libs.guava)
-    implementation(libs.jsr305)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jsr305)
 
     testImplementation(testFixtures(projects.serialization))
     testImplementation(testFixtures(projects.core))
 
     testFixturesImplementation(projects.baseServices)
-    testFixturesImplementation(libs.slf4jApi)
+    testFixturesImplementation(oldLibs.slf4jApi)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
     integTestImplementation(projects.serviceRegistryBuilder)

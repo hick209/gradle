@@ -25,26 +25,26 @@ dependencies {
     compileOnly(projects.serviceLookup)
     compileOnly(projects.stdlibJavaExtensions)
 
-    compileOnly(libs.slf4jApi)
-    compileOnly(libs.inject)
-    compileOnly(libs.jspecify)
+    compileOnly(oldLibs.slf4jApi)
+    compileOnly(oldLibs.inject)
+    compileOnly(oldLibs.jspecify)
 
-    api(libs.kotlinStdlib)
+    api(oldLibs.kotlinStdlib)
 
 
-    implementation(libs.futureKotlin("gradle-plugin"))
-    implementation(libs.futureKotlin("gradle-plugin-api"))
-    implementation(libs.futureKotlin("sam-with-receiver"))
-    implementation(libs.futureKotlin("assignment"))
+    implementation(oldLibs.futureKotlin("gradle-plugin"))
+    implementation(oldLibs.futureKotlin("gradle-plugin-api"))
+    implementation(oldLibs.futureKotlin("sam-with-receiver"))
+    implementation(oldLibs.futureKotlin("assignment"))
 
 
     testImplementation(projects.logging)
     testImplementation(testFixtures(projects.kotlinDsl))
-    testImplementation(libs.slf4jApi)
-    testImplementation(libs.kotlinReflect) {
+    testImplementation(oldLibs.slf4jApi)
+    testImplementation(oldLibs.kotlinReflect) {
         because("mockito-kotlin 1.6 requires kotlin-reflect in 1.0.7, we want to overrule that")
     }
-    testImplementation(libs.mockitoKotlin)
+    testImplementation(oldLibs.mockitoKotlin)
 }
 
 packageCycles {

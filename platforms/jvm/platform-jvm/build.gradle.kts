@@ -21,9 +21,9 @@ dependencies {
     api(projects.modelCore)
     api(projects.platformBase)
 
-    api(libs.groovy)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.dependencyManagement)
     implementation(projects.execution)
@@ -33,12 +33,12 @@ dependencies {
     implementation(projects.publish)
     implementation(projects.serviceLookup)
 
-    implementation(libs.guava)
-    implementation(libs.commonsLang)
-    implementation(libs.commonsIo)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.commonsIo)
 
     testImplementation(projects.snapshots)
-    testImplementation(libs.ant)
+    testImplementation(oldLibs.ant)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.logging))
     testImplementation(testFixtures(projects.platformBase))
@@ -46,7 +46,7 @@ dependencies {
 
     integTestImplementation(projects.internalIntegTesting)
 
-    integTestImplementation(libs.slf4jApi)
+    integTestImplementation(oldLibs.slf4jApi)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("Tests instantiate DefaultClassLoaderRegistry which requires a 'gradle-plugins.properties' through DefaultPluginModuleRegistry")

@@ -25,13 +25,13 @@ dependencies {
     api(projects.publish)
     api(projects.resources)
 
-    api(libs.guava)
-    api(libs.inject)
-    api(libs.jspecify)
-    api(libs.maven3Model) {
+    api(oldLibs.guava)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
+    api(oldLibs.maven3Model) {
         because("We use the metadata model classes to create POM metadata files for components")
     }
-    api(libs.maven3RepositoryMetadata) {
+    api(oldLibs.maven3RepositoryMetadata) {
         because("We use the metadata model classes to create repository metadata files")
     }
 
@@ -40,16 +40,16 @@ dependencies {
     implementation(projects.loggingApi)
     implementation(projects.serviceLookup)
 
-    implementation(libs.commonsLang)
-    implementation(libs.plexusUtils)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.plexusUtils)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(projects.native)
     testImplementation(projects.processServices)
     testImplementation(projects.snapshots)
     testImplementation(projects.resourcesHttp)
 
-    testImplementation(libs.xmlunit)
+    testImplementation(oldLibs.xmlunit)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.modelCore))

@@ -37,14 +37,14 @@ dependencies {
     api(projects.testingJvm)
     api(projects.testSuitesBase)
 
-    api(libs.inject)
+    api(oldLibs.inject)
 
     implementation(projects.pluginsJavaBase)
     implementation(projects.testingBase)
     implementation(projects.reporting)
 
-    implementation(libs.guava)
-    implementation(libs.jspecify)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jspecify)
 
     integTestDistributionRuntimeOnly(projects.distributionsJvm)
 }

@@ -26,9 +26,9 @@ dependencies {
     api(projects.scopedPersistentCache)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
-    implementation(libs.commonsIo)
-    implementation(libs.guava)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.slf4jApi)
 }

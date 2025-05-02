@@ -23,9 +23,9 @@ description = "Problems API rendering infrastructure"
 dependencies {
     api(projects.problemsApi)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
     implementation(projects.baseServices)
 
     integTestImplementation(projects.internalTesting)

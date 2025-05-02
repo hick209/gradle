@@ -17,9 +17,9 @@ errorprone {
 }
 
 dependencies {
-    api(libs.inject)
-    api(libs.jspecify)
-    api(libs.maven3Settings)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
+    api(oldLibs.maven3Settings)
 
     api(projects.baseServices)
     api(projects.buildInitSpecs)
@@ -47,31 +47,31 @@ dependencies {
     implementation(projects.serviceLookup)
     implementation(projects.wrapperShared)
 
-    implementation(libs.groovy)
-    implementation(libs.groovyTemplates)
-    implementation(libs.guava)
-    implementation(libs.gson)
-    implementation(libs.commonsLang)
-    implementation(libs.maven3SettingsBuilder)
-    implementation(libs.maven3Model)
-    implementation(libs.slf4jApi)
-    implementation(libs.plexusUtils)
+    implementation(oldLibs.groovy)
+    implementation(oldLibs.groovyTemplates)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.gson)
+    implementation(oldLibs.commonsLang)
+    implementation(oldLibs.maven3SettingsBuilder)
+    implementation(oldLibs.maven3Model)
+    implementation(oldLibs.slf4jApi)
+    implementation(oldLibs.plexusUtils)
 
     // We need to handle the Maven dependencies specially otherwise it breaks some cross version tests
     // TODO Figure out why and fix it - Move the two deps below to implementation and api and run ProjectTheExtensionCrossVersionSpec
-    compileOnly(libs.eclipseSisuPlexus) {
+    compileOnly(oldLibs.eclipseSisuPlexus) {
         exclude(module = "cdi-api") // To respect the Maven exclusion
     }
-    compileOnly(libs.maven3Compat)
+    compileOnly(oldLibs.maven3Compat)
 
     // 3 dependencies below are recommended as implementation but doing so adds them to the distribution
     // TODO Check why we reference them and if so, why they don't need to be in the distribution
-    compileOnly(libs.maven3Artifact)
-    compileOnly(libs.mavenResolverApi)
-    compileOnly(libs.plexusClassworlds)
+    compileOnly(oldLibs.maven3Artifact)
+    compileOnly(oldLibs.mavenResolverApi)
+    compileOnly(oldLibs.plexusClassworlds)
 
-    compileOnly(libs.maven3Core)
-    compileOnly(libs.maven3PluginApi)
+    compileOnly(oldLibs.maven3Core)
+    compileOnly(oldLibs.maven3PluginApi)
 
     compileOnly(projects.platformBase)
 
@@ -98,17 +98,17 @@ dependencies {
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.platformNative))
 
-    testRuntimeOnly(libs.maven3Compat)
-    testRuntimeOnly(libs.maven3PluginApi)
+    testRuntimeOnly(oldLibs.maven3Compat)
+    testRuntimeOnly(oldLibs.maven3PluginApi)
 
     testRuntimeOnly(projects.distributionsFull) {
         because("ProjectBuilder tests load services from a Gradle distribution.  Toolchain usage requires JVM distribution.")
     }
 
     integTestImplementation(projects.native)
-    integTestImplementation(libs.jetty)
+    integTestImplementation(oldLibs.jetty)
 
-    integTestRuntimeOnly(libs.maven3Compat)
+    integTestRuntimeOnly(oldLibs.maven3Compat)
 
     integTestDistributionRuntimeOnly(projects.distributionsFull)
 }

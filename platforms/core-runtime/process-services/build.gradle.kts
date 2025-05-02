@@ -9,7 +9,7 @@ dependencies {
     api(projects.baseServices)
     api(projects.coreApi)
 
-    api(libs.jspecify)
+    api(oldLibs.jspecify)
 
     testImplementation(testFixtures(projects.core))
 

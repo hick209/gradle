@@ -14,18 +14,18 @@ dependencies {
     performanceTestCompileOnly(projects.internalIntegTesting)
     performanceTestCompileOnly(projects.internalPerformanceTesting)
 
-    performanceTestImplementation(libs.gradleProfiler)
+    performanceTestImplementation(oldLibs.gradleProfiler)
 
     testFixturesApi(projects.baseServices)
 
-    testFixturesApi(libs.commonsIo)
+    testFixturesApi(oldLibs.commonsIo)
 
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(projects.internalTesting)
     testFixturesImplementation(projects.internalPerformanceTesting)
     testFixturesImplementation(projects.logging)
 
-    testFixturesImplementation(libs.groovyJson)
+    testFixturesImplementation(oldLibs.groovyJson)
 
     performanceTestDistributionRuntimeOnly(projects.distributionsFull) {
         because("so that all Gradle features are available")

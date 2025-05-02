@@ -11,14 +11,14 @@ dependencies {
     api(projects.coreApi)
     api(projects.resources)
 
-    api(libs.jsch)
+    api(oldLibs.jsch)
 
     implementation(projects.core)
 
-    implementation(libs.commonsIo)
-    implementation(libs.guava)
-    implementation(libs.jsr305)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.commonsIo)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jsr305)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.dependencyManagement))
@@ -26,10 +26,10 @@ dependencies {
     testImplementation(testFixtures(projects.maven))
 
     integTestImplementation(projects.logging)
-    integTestImplementation(libs.jetty)
-    integTestImplementation(libs.sshdCore)
-    integTestImplementation(libs.sshdScp)
-    integTestImplementation(libs.sshdSftp)
+    integTestImplementation(oldLibs.jetty)
+    integTestImplementation(oldLibs.sshdCore)
+    integTestImplementation(oldLibs.sshdScp)
+    integTestImplementation(oldLibs.sshdSftp)
 
     integTestDistributionRuntimeOnly(projects.distributionsBasics)
 }

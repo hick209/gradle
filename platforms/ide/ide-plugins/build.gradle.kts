@@ -31,10 +31,10 @@ dependencies {
     api(projects.platformJvm)
     api(projects.toolingApi)
 
-    api(libs.groovy)
-    api(libs.guava)
-    api(libs.inject)
-    api(libs.jspecify)
+    api(oldLibs.groovy)
+    api(oldLibs.guava)
+    api(oldLibs.inject)
+    api(oldLibs.jspecify)
 
     implementation(projects.dependencyManagement)
     implementation(projects.ear)
@@ -53,7 +53,7 @@ dependencies {
     implementation(projects.testSuitesBase)
     implementation(projects.war)
 
-    implementation(libs.commonsLang)
+    implementation(oldLibs.commonsLang)
 
     runtimeOnly(projects.languageJvm)
     runtimeOnly(projects.testingBase)
@@ -67,7 +67,7 @@ dependencies {
         because("ProjectBuilder tests load services from a Gradle distribution.")
     }
 
-    testImplementation(libs.xmlunit)
+    testImplementation(oldLibs.xmlunit)
 
 
     integTestImplementation(projects.internalIntegTesting)

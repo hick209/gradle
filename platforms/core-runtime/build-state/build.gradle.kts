@@ -41,7 +41,7 @@ dependencies {
     implementation(projects.problemsApi)
     implementation(projects.serialization)
 
-    implementation(libs.jspecify)
+    implementation(oldLibs.jspecify)
 
     testImplementation(projects.serviceRegistryImpl)
 }

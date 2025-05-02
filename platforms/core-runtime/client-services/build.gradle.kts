@@ -53,8 +53,8 @@ dependencies {
     api(projects.fileCollections)
     api(projects.fileTemp)
 
-    api(libs.jspecify)
-    api(libs.nativePlatform)
+    api(oldLibs.jspecify)
+    api(oldLibs.nativePlatform)
 
     implementation(projects.baseAsm)
     implementation(projects.buildConfiguration)
@@ -68,10 +68,10 @@ dependencies {
     implementation(projects.loggingApi)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(libs.asm)
-    implementation(libs.guava)
-    implementation(libs.jsr305)
-    implementation(libs.slf4jApi)
+    implementation(oldLibs.asm)
+    implementation(oldLibs.guava)
+    implementation(oldLibs.jsr305)
+    implementation(oldLibs.slf4jApi)
 
     testImplementation(testFixtures(projects.core)) {
         because("ConcurrentSpecification")

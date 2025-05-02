@@ -10,14 +10,14 @@ dependencies {
     api(projects.files)
     api(projects.stdlibJavaExtensions)
 
-    api(libs.gradleFileEvents)
-    api(libs.jspecify)
-    api(libs.jsr305)
-    api(libs.nativePlatform)
-    api(libs.slf4jApi)
+    api(oldLibs.gradleFileEvents)
+    api(oldLibs.jspecify)
+    api(oldLibs.jsr305)
+    api(oldLibs.nativePlatform)
+    api(oldLibs.slf4jApi)
     implementation(projects.functional)
 
-    implementation(libs.guava)
+    implementation(oldLibs.guava)
 
     testImplementation(projects.processServices)
     testImplementation(projects.resources)
@@ -31,7 +31,7 @@ dependencies {
     testImplementation(testFixtures(projects.launcher))
     testImplementation(testFixtures(projects.snapshots))
 
-    testImplementation(libs.commonsIo)
+    testImplementation(oldLibs.commonsIo)
 
     integTestDistributionRuntimeOnly(projects.distributionsJvm) {
         because("Uses application plugin.")

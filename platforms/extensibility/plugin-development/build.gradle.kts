@@ -25,10 +25,10 @@ dependencies {
     api(projects.toolchainsJvmShared)
     api(projects.workers)
 
-    api(libs.groovy)
-    api(libs.gson)
-    api(libs.jspecify)
-    api(libs.inject)
+    api(oldLibs.groovy)
+    api(oldLibs.gson)
+    api(oldLibs.jspecify)
+    api(oldLibs.inject)
 
     implementation(projects.classloaders)
     implementation(projects.serviceLookup)
@@ -57,8 +57,8 @@ dependencies {
     implementation(projects.testingJvm)
     implementation(projects.toolchainsJvm)
 
-    implementation(libs.asm)
-    implementation(libs.guava)
+    implementation(oldLibs.asm)
+    implementation(oldLibs.guava)
 
     testImplementation(projects.fileCollections)
     testImplementation(projects.enterpriseOperations)
@@ -71,8 +71,8 @@ dependencies {
     integTestImplementation(testFixtures(projects.modelReflect))
     integTestImplementation(testFixtures(projects.toolingApi))
 
-    integTestImplementation(libs.groovyTest)
-    integTestImplementation(libs.jetbrainsAnnotations)
+    integTestImplementation(oldLibs.groovyTest)
+    integTestImplementation(oldLibs.jetbrainsAnnotations)
 
     integTestLocalRepository(projects.toolingApi) {
         because("Required by GradleImplDepsCompatibilityIntegrationTest")
@@ -86,7 +86,7 @@ dependencies {
 
     testFixturesImplementation(projects.modelCore)
     testFixturesImplementation(projects.logging)
-    testFixturesImplementation(libs.gson)
+    testFixturesImplementation(oldLibs.gson)
     testFixturesImplementation(projects.baseServices)
 }
 
