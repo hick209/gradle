@@ -49,7 +49,7 @@ dependencies {
     api(projects.time)
     api(projects.wrapperShared)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.core)
     implementation(projects.buildProcessServices)
@@ -57,10 +57,10 @@ dependencies {
     implementation(projects.serviceProvider)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jsr305)
+    implementation(libs.guava)
+    implementation(libs.jsr305)
 
-    shadedImplementation(oldLibs.slf4jApi)
+    shadedImplementation(libs.slf4jApi)
 
     runtimeOnly(projects.coreApi)
 
@@ -75,8 +75,8 @@ dependencies {
     testFixturesImplementation(projects.internalTesting)
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(testFixtures(projects.buildProcessServices))
-    testFixturesImplementation(oldLibs.commonsIo)
-    testFixturesImplementation(oldLibs.slf4jApi)
+    testFixturesImplementation(libs.commonsIo)
+    testFixturesImplementation(libs.slf4jApi)
 
     integTestImplementation(projects.jvmServices)
     integTestImplementation(projects.persistentCache)
@@ -86,9 +86,9 @@ dependencies {
     crossVersionTestImplementation(projects.problems)
     crossVersionTestImplementation(testFixtures(projects.buildProcessServices))
     crossVersionTestImplementation(testFixtures(projects.problemsApi))
-    crossVersionTestImplementation(oldLibs.jettyWebApp)
-    crossVersionTestImplementation(oldLibs.commonsIo)
-    crossVersionTestRuntimeOnly(oldLibs.cglib) {
+    crossVersionTestImplementation(libs.jettyWebApp)
+    crossVersionTestImplementation(libs.commonsIo)
+    crossVersionTestRuntimeOnly(libs.cglib) {
         because("BuildFinishedCrossVersionSpec classpath inference requires cglib enhancer")
     }
 

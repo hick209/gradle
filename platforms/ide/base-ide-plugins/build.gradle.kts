@@ -25,18 +25,18 @@ dependencies {
     api(projects.baseServices)
     api(projects.coreApi)
     api(projects.ide)
-    api(oldLibs.inject)
+    api(libs.inject)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.core)
     implementation(projects.logging)
     implementation(projects.loggingApi)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.guava)
+    implementation(libs.commonsLang)
+    implementation(libs.guava)
 
     runtimeOnly(projects.dependencyManagement)
-    runtimeOnly(oldLibs.groovy)
+    runtimeOnly(libs.groovy)
 
     testImplementation(testFixtures(projects.core))
 

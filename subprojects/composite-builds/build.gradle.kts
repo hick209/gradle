@@ -25,8 +25,8 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.classloaders)
     implementation(projects.time)
@@ -37,8 +37,8 @@ dependencies {
     implementation(projects.serviceLookup)
     implementation(projects.functional)
 
-    implementation(oldLibs.slf4jApi)
-    implementation(oldLibs.guava)
+    implementation(libs.slf4jApi)
+    implementation(libs.guava)
 
     testImplementation(projects.fileWatching)
     testImplementation(projects.buildOption)

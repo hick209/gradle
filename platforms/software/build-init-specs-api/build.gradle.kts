@@ -25,6 +25,6 @@ dependencies {
     api(projects.coreApi)
     api(projects.stdlibJavaExtensions)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.jspecify)
+    implementation(libs.commonsLang)
+    implementation(libs.jspecify)
 }

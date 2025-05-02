@@ -7,15 +7,15 @@ description = "Shared classes for projects requiring GPG support"
 dependencies {
     api(projects.resources)
 
-    api(oldLibs.bouncycastlePgp)
-    api(oldLibs.jspecify)
+    api(libs.bouncycastlePgp)
+    api(libs.jspecify)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.time)
     implementation(projects.loggingApi)
 
-    implementation(oldLibs.bouncycastleProvider)
-    implementation(oldLibs.guava)
+    implementation(libs.bouncycastleProvider)
+    implementation(libs.guava)
 
     testRuntimeOnly(projects.logging)
 }

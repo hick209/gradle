@@ -38,11 +38,11 @@ dependencies {
     implementation(projects.snapshots)
     implementation(projects.time)
 
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.guava)
-    implementation(oldLibs.guice)
-    implementation(oldLibs.jspecify)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.commonsIo)
+    implementation(libs.guava)
+    implementation(libs.guice)
+    implementation(libs.jspecify)
+    implementation(libs.slf4jApi)
 }
 
 application {

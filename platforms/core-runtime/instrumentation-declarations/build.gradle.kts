@@ -13,16 +13,16 @@ dependencies {
     compileOnly(projects.coreApi)
     compileOnly(projects.modelCore)
     compileOnly(projects.reporting)
-    compileOnly(oldLibs.groovy)
+    compileOnly(libs.groovy)
     compileOnly(projects.codeQuality)
 
-    implementation(oldLibs.jspecify)
+    implementation(libs.jspecify)
 
     // Instrumentation dependencies
     compileOnly(projects.internalInstrumentationApi)
-    compileOnly(oldLibs.asm)
-    compileOnly(oldLibs.asmUtil)
-    compileOnly(oldLibs.asmTree)
+    compileOnly(libs.asm)
+    compileOnly(libs.asmUtil)
+    compileOnly(libs.asmTree)
     annotationProcessor(projects.internalInstrumentationProcessor)
     annotationProcessor(platform(projects.distributionsDependencies))
 }

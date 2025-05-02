@@ -12,17 +12,17 @@ dependencies {
     api(projects.publish)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.bouncycastlePgp)
-    api(oldLibs.jspecify)
-    api(oldLibs.groovy)
-    api(oldLibs.inject)
+    api(libs.bouncycastlePgp)
+    api(libs.jspecify)
+    api(libs.groovy)
+    api(libs.inject)
 
     implementation(projects.functional)
     implementation(projects.loggingApi)
     implementation(projects.modelCore)
     implementation(projects.platformBase)
 
-    implementation(oldLibs.guava)
+    implementation(libs.guava)
 
     testFixturesImplementation(projects.baseServices) {
         because("Required to access org.gradle.internal.SystemProperties")
@@ -43,9 +43,9 @@ dependencies {
     testFixturesImplementation(projects.security)
     testFixturesImplementation(testFixtures(projects.core))
 
-    testFixturesImplementation(oldLibs.slf4jApi)
-    testFixturesImplementation(oldLibs.jetty)
-    testFixturesImplementation(oldLibs.jettyWebApp)
+    testFixturesImplementation(libs.slf4jApi)
+    testFixturesImplementation(libs.jetty)
+    testFixturesImplementation(libs.jettyWebApp)
 }
 
 strictCompile {

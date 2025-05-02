@@ -27,43 +27,43 @@ dependencies {
     api(projects.native)
     api(projects.problemsApi)
 
-    api(oldLibs.jansi)
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
-    api(oldLibs.slf4jApi)
+    api(libs.jansi)
+    api(libs.jspecify)
+    api(libs.jsr305)
+    api(libs.slf4jApi)
 
     implementation(projects.concurrent)
     implementation(projects.io)
     implementation(projects.messaging)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(oldLibs.errorProneAnnotations)
-    implementation(oldLibs.julToSlf4j)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.guava)
+    implementation(libs.errorProneAnnotations)
+    implementation(libs.julToSlf4j)
+    implementation(libs.commonsLang)
+    implementation(libs.commonsIo)
+    implementation(libs.guava)
 
     // GSon is not strictly required here but removing it moves the dependency in the distribution from lib to lib/plugins
     // TODO Check if this is an issue
-    runtimeOnly(oldLibs.gson)
-    runtimeOnly(oldLibs.jclToSlf4j)
-    runtimeOnly(oldLibs.log4jToSlf4j)
+    runtimeOnly(libs.gson)
+    runtimeOnly(libs.jclToSlf4j)
+    runtimeOnly(libs.log4jToSlf4j)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.time))
     testImplementation(testFixtures(projects.testingJvm))
-    testImplementation(oldLibs.groovyDatetime)
-    testImplementation(oldLibs.groovyDateUtil)
+    testImplementation(libs.groovyDatetime)
+    testImplementation(libs.groovyDateUtil)
 
     integTestImplementation(projects.problems)
 
-    integTestImplementation(oldLibs.ansiControlSequenceUtil)
+    integTestImplementation(libs.ansiControlSequenceUtil)
 
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.enterpriseWorkers)
     testFixturesImplementation(testFixtures(projects.core))
     testFixturesImplementation(testFixtures(projects.time))
-    testFixturesImplementation(oldLibs.slf4jApi)
+    testFixturesImplementation(libs.slf4jApi)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 }

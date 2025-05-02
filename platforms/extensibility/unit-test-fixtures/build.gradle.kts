@@ -33,7 +33,7 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.time)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.buildState)
     implementation(projects.classloaders)

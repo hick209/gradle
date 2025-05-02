@@ -64,16 +64,16 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.versionedCache)
 
-    api(oldLibs.bouncycastlePgp)
-    api(oldLibs.groovy)
-    api(oldLibs.guava)
-    api(oldLibs.inject)
-    api(oldLibs.ivy)
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
-    api(oldLibs.maven3Settings)
-    api(oldLibs.maven3SettingsBuilder)
-    api(oldLibs.slf4jApi)
+    api(libs.bouncycastlePgp)
+    api(libs.groovy)
+    api(libs.guava)
+    api(libs.inject)
+    api(libs.ivy)
+    api(libs.jspecify)
+    api(libs.jsr305)
+    api(libs.maven3Settings)
+    api(libs.maven3SettingsBuilder)
+    api(libs.slf4jApi)
 
     implementation(projects.fileOperations)
     implementation(projects.time)
@@ -83,22 +83,22 @@ dependencies {
     implementation(projects.resourcesHttp)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(oldLibs.asm)
-    implementation(oldLibs.asmCommons)
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.fastutil)
-    implementation(oldLibs.gson)
-    implementation(oldLibs.httpcore)
+    implementation(libs.asm)
+    implementation(libs.asmCommons)
+    implementation(libs.commonsIo)
+    implementation(libs.commonsLang)
+    implementation(libs.fastutil)
+    implementation(libs.gson)
+    implementation(libs.httpcore)
 
     testImplementation(projects.buildCachePackaging)
     testImplementation(projects.softwareDiagnostics)
 
     testImplementation(projects.processServices)
-    testImplementation(oldLibs.asmUtil)
-    testImplementation(oldLibs.commonsHttpclient)
-    testImplementation(oldLibs.groovyXml)
-    testImplementation(oldLibs.jsoup)
+    testImplementation(libs.asmUtil)
+    testImplementation(libs.commonsHttpclient)
+    testImplementation(libs.groovyXml)
+    testImplementation(libs.jsoup)
 
     testImplementation(testFixtures(projects.serialization))
     testImplementation(testFixtures(projects.baseServices))
@@ -112,10 +112,10 @@ dependencies {
     testImplementation(testFixtures(projects.versionControl))
 
     integTestImplementation(projects.buildOption)
-    integTestImplementation(oldLibs.jansi)
-    integTestImplementation(oldLibs.ansiControlSequenceUtil)
-    integTestImplementation(oldLibs.groovyJson)
-    integTestImplementation(oldLibs.socksProxy) {
+    integTestImplementation(libs.jansi)
+    integTestImplementation(libs.ansiControlSequenceUtil)
+    integTestImplementation(libs.groovyJson)
+    integTestImplementation(libs.socksProxy) {
         because("SOCKS proxy not part of internal-integ-testing api, since it has limited usefulness, so must be explicitly depended upon")
     }
     integTestImplementation(testFixtures(projects.core))
@@ -129,27 +129,27 @@ dependencies {
         because("Test fixtures export the CacheAccess class")
     }
 
-    testFixturesApi(oldLibs.jetty)
+    testFixturesApi(libs.jetty)
     testFixturesImplementation(projects.core)
     testFixturesImplementation(testFixtures(projects.core))
     testFixturesImplementation(testFixtures(projects.resourcesHttp))
     testFixturesImplementation(projects.coreApi)
     testFixturesImplementation(projects.messaging)
     testFixturesImplementation(projects.internalIntegTesting)
-    testFixturesImplementation(oldLibs.slf4jApi)
-    testFixturesImplementation(oldLibs.inject)
-    testFixturesImplementation(oldLibs.groovyJson)
-    testFixturesImplementation(oldLibs.guava) {
+    testFixturesImplementation(libs.slf4jApi)
+    testFixturesImplementation(libs.inject)
+    testFixturesImplementation(libs.groovyJson)
+    testFixturesImplementation(libs.guava) {
         because("Groovy compiler reflects on private field on TextUtil")
     }
-    testFixturesImplementation(oldLibs.bouncycastlePgp)
-    testFixturesApi(oldLibs.testcontainersSpock) {
+    testFixturesImplementation(libs.bouncycastlePgp)
+    testFixturesApi(libs.testcontainersSpock) {
         because("API because of Groovy compiler bug leaking internals")
     }
     testFixturesImplementation(projects.jvmServices) {
         because("Groovy compiler bug leaks internals")
     }
-    testFixturesImplementation(oldLibs.jettyWebApp) {
+    testFixturesImplementation(libs.jettyWebApp) {
         because("Groovy compiler bug leaks internals")
     }
 
@@ -163,7 +163,7 @@ dependencies {
         because("Need access to java platforms")
     }
     crossVersionTestDistributionRuntimeOnly(projects.distributionsCore)
-    crossVersionTestImplementation(oldLibs.jettyWebApp)
+    crossVersionTestImplementation(libs.jettyWebApp)
 }
 
 packageCycles {

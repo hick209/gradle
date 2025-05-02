@@ -23,15 +23,15 @@ dependencies {
     api(projects.reportRendering)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.concurrent)
     implementation(projects.functional)
     implementation(projects.loggingApi)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.guava)
+    implementation(libs.commonsLang)
+    implementation(libs.guava)
 
     testFixturesApi(testFixtures(projects.platformNative))
     testFixturesApi(testFixtures(projects.logging))
@@ -40,7 +40,7 @@ dependencies {
     testFixturesImplementation(projects.core)
     testFixturesImplementation(projects.internalIntegTesting)
 
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.guava)
 
     testImplementation(projects.processServices)
     testImplementation(testFixtures(projects.core))

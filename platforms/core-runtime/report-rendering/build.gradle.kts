@@ -25,8 +25,8 @@ dependencies {
 
     implementation(projects.baseServices)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.jspecify)
+    implementation(libs.commonsLang)
+    implementation(libs.jspecify)
 
-    testImplementation(oldLibs.jsoup)
+    testImplementation(libs.jsoup)
 }

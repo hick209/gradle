@@ -27,14 +27,14 @@ dependencies {
     api(projects.coreApi)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.guava)
-    api(oldLibs.jspecify)
+    api(libs.guava)
+    api(libs.jspecify)
 
     implementation(projects.baseServices)
     implementation(projects.buildOption)
 
-    implementation(oldLibs.jacksonCore)
-    implementation(oldLibs.jacksonDatabind)
-    implementation(oldLibs.jacksonDatatypeJdk8)
-    implementation(oldLibs.jacksonDatatypeJsr310)
+    implementation(libs.jacksonCore)
+    implementation(libs.jacksonDatabind)
+    implementation(libs.jacksonDatatypeJdk8)
+    implementation(libs.jacksonDatatypeJsr310)
 }

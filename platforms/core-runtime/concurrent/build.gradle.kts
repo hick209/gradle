@@ -30,7 +30,7 @@ gradleModule {
 dependencies {
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.slf4jApi)
 }

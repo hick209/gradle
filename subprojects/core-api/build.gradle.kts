@@ -13,7 +13,7 @@ errorprone {
 }
 
 dependencies {
-    compileOnly(oldLibs.jetbrainsAnnotations)
+    compileOnly(libs.jetbrainsAnnotations)
 
     api(projects.stdlibJavaExtensions)
     api(projects.buildCacheSpi)
@@ -23,26 +23,26 @@ dependencies {
     api(projects.resources)
     api(projects.persistentCache)
     api(projects.declarativeDslApi)
-    api(oldLibs.jspecify)
-    api(oldLibs.groovy)
-    api(oldLibs.groovyAnt)
-    api(oldLibs.guava)
-    api(oldLibs.ant)
-    api(oldLibs.inject)
+    api(libs.jspecify)
+    api(libs.groovy)
+    api(libs.groovyAnt)
+    api(libs.guava)
+    api(libs.ant)
+    api(libs.inject)
 
     implementation(projects.io)
     implementation(projects.baseServicesGroovy)
     implementation(projects.logging)
     implementation(projects.buildProcessServices)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.jsr305)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.commonsLang)
+    implementation(libs.jsr305)
+    implementation(libs.slf4jApi)
 
-    runtimeOnly(oldLibs.kotlinReflect)
+    runtimeOnly(libs.kotlinReflect)
 
-    testImplementation(oldLibs.asm)
-    testImplementation(oldLibs.asmCommons)
+    testImplementation(libs.asm)
+    testImplementation(libs.asmCommons)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.logging))
 

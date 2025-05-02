@@ -34,7 +34,7 @@ val problemReportReportPath by configurations.creating {
 // You can have a faster feedback loop by running `configuration-cache-report` as an included build
 // See https://github.com/gradle/configuration-cache-report#development-with-gradlegradle-and-composite-build
 dependencies {
-    problemReportReportPath(oldLibs.configurationCacheReport)
+    problemReportReportPath(libs.configurationCacheReport)
 }
 
 tasks.processResources {
@@ -59,8 +59,8 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.jspecify)
-    api(oldLibs.kotlinStdlib)
+    api(libs.jspecify)
+    api(libs.kotlinStdlib)
 
     implementation(projects.baseServices)
     implementation(projects.logging)
@@ -70,17 +70,17 @@ dependencies {
     implementation(projects.serviceLookup)
     implementation(projects.snapshots)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.fastutil)
+    implementation(libs.guava)
+    implementation(libs.fastutil)
 
     testImplementation(projects.stdlibKotlinExtensions)
     testImplementation(testFixtures(projects.core))
 
-    testImplementation(oldLibs.junit)
+    testImplementation(libs.junit)
 
-    testImplementation(oldLibs.mockitoKotlin)
-    testImplementation(oldLibs.kotlinReflect)
-    testImplementation(oldLibs.mockitoCore)
+    testImplementation(libs.mockitoKotlin)
+    testImplementation(libs.kotlinReflect)
+    testImplementation(libs.mockitoCore)
 
     integTestImplementation(projects.internalTesting)
     integTestImplementation(testFixtures(projects.logging))

@@ -21,7 +21,7 @@ plugins {
 description = "Plugin used to package a project as a distribution."
 
 dependencies {
-    api(oldLibs.inject)
+    api(libs.inject)
 
     api(projects.stdlibJavaExtensions)
     api(projects.baseServices)
@@ -34,9 +34,9 @@ dependencies {
     implementation(projects.modelCore)
     implementation(projects.platformBase)
 
-    implementation(oldLibs.commonsLang)
+    implementation(libs.commonsLang)
 
-    runtimeOnly(oldLibs.groovy)
+    runtimeOnly(libs.groovy)
 
     testImplementation(testFixtures(projects.core))
 

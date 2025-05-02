@@ -39,9 +39,9 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.toolchainsJvmShared)
 
-    api(oldLibs.groovy)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.groovy)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.fileCollections)
     implementation(projects.fileOperations)
@@ -54,7 +54,7 @@ dependencies {
     implementation(projects.toolchainsJvm)
     implementation(projects.serviceLookup)
 
-    implementation(oldLibs.commonsLang)
+    implementation(libs.commonsLang)
 
     testImplementation(testFixtures(projects.core))
 

@@ -14,12 +14,12 @@ dependencies {
     api(projects.hashing)
     api(projects.persistentCache)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.stdlibJavaExtensions)
 
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.guava)
+    implementation(libs.commonsIo)
+    implementation(libs.guava)
 
     testImplementation(projects.modelCore)
     testImplementation(projects.fileCollections)

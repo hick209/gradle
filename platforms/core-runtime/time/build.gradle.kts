@@ -30,5 +30,5 @@ gradleModule {
 dependencies {
     api(projects.stdlibJavaExtensions)
 
-    implementation(oldLibs.jspecify)
+    implementation(libs.jspecify)
 }

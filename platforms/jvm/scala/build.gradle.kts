@@ -26,8 +26,8 @@ dependencies {
     api(projects.toolchainsJvmShared)
     api(projects.workers)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.time)
     implementation(projects.serviceLookup)
@@ -41,21 +41,21 @@ dependencies {
     implementation(projects.reporting)
     implementation(projects.workerMain)
 
-    implementation(oldLibs.guava)
+    implementation(libs.guava)
 
-    compileOnly(oldLibs.zinc) {
+    compileOnly(libs.zinc) {
         // Because not needed and was vulnerable
         exclude(module="log4j-core")
         exclude(module="log4j-api")
     }
 
-    runtimeOnly(oldLibs.groovy)
+    runtimeOnly(libs.groovy)
 
     testImplementation(projects.baseServicesGroovy)
     testImplementation(projects.files)
     testImplementation(projects.resources)
-    testImplementation(oldLibs.slf4jApi)
-    testImplementation(oldLibs.commonsIo)
+    testImplementation(libs.slf4jApi)
+    testImplementation(libs.commonsIo)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.pluginsJava))
     testImplementation(testFixtures(projects.languageJvm))

@@ -16,14 +16,14 @@ dependencies {
     api(projects.baseServices)
     api(projects.messaging)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.native)
     implementation(projects.serviceLookup)
 
-    implementation(oldLibs.slf4jApi)
-    implementation(oldLibs.guava)
-    implementation(oldLibs.nativePlatform)
+    implementation(libs.slf4jApi)
+    implementation(libs.guava)
+    implementation(libs.nativePlatform)
 
     testImplementation(testFixtures(projects.core))
 

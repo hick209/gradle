@@ -27,7 +27,7 @@ gradleModule {
 }
 
 dependencies {
-    api(oldLibs.slf4jApi)
+    api(libs.slf4jApi)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.internalInstrumentationApi)

@@ -23,17 +23,17 @@ dependencies {
     api(projects.testingBaseInfrastructure)
     api(projects.time)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.logging)
     implementation(projects.loggingApi)
     implementation(projects.io)
     implementation(projects.softwareDiagnostics)
 
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.guava)
+    implementation(libs.commonsIo)
+    implementation(libs.commonsLang)
+    implementation(libs.guava)
 
     testImplementation(projects.fileCollections)
     testImplementation(testFixtures(projects.core))

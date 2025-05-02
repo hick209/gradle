@@ -28,13 +28,13 @@ dependencies {
     api(projects.loggingApi)
     api(projects.serialization)
 
-    api(oldLibs.guava)
-    api(oldLibs.kotlinStdlib)
+    api(libs.guava)
+    api(libs.kotlinStdlib)
 
     implementation(projects.baseServices)
     implementation(projects.problemsApi)
     implementation(projects.stdlibKotlinExtensions)
 
-    implementation(oldLibs.fastutil)
-    implementation(oldLibs.jspecify)
+    implementation(libs.fastutil)
+    implementation(libs.jspecify)
 }

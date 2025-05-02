@@ -19,18 +19,18 @@ dependencies {
     api(projects.time)
     api(projects.workerMain)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.io)
     implementation(projects.serviceLookup)
     implementation(projects.serviceProvider)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.commonsLang)
+    implementation(libs.slf4jApi)
 
     testImplementation(projects.serviceRegistryImpl)
-    testImplementation(oldLibs.commonsIo)
+    testImplementation(libs.commonsIo)
     testImplementation(testFixtures(projects.time))
     testImplementation(testFixtures(projects.serialization))
     testImplementation(testFixtures(projects.time))

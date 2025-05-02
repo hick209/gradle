@@ -15,7 +15,7 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.messaging)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.baseServices)
 }

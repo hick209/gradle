@@ -18,28 +18,28 @@
 plugins {
     `java-library`
     checkstyle
-    alias(oldLibs.plugins.versions)
+    alias(libs.plugins.versions)
 }
 // end::use_plugin[]
 
 // tag::simple_dependency_use[]
 dependencies {
-    implementation(oldLibs.groovy.core)
+    implementation(libs.groovy.core)
 }
 // end::simple_dependency_use[]
 
 // tag::use_version[]
 checkstyle {
     // will use the version declared in the catalog
-    toolVersion = oldLibs.versions.checkstyle.get()
+    toolVersion = libs.versions.checkstyle.get()
 }
 // end::use_version[]
 
 // tag::use_catalog[]
 dependencies {
-    implementation(oldLibs.groovy.core)
-    implementation(oldLibs.groovy.json)
-    implementation(oldLibs.groovy.nio)
+    implementation(libs.groovy.core)
+    implementation(libs.groovy.json)
+    implementation(libs.groovy.nio)
 }
 // end::use_catalog[]
 
@@ -53,7 +53,7 @@ dependencies {
 
 // tag::use_dependency_bundle[]
 dependencies {
-    implementation(oldLibs.bundles.groovy)
+    implementation(libs.bundles.groovy)
 }
 // end::use_dependency_bundle[]
 

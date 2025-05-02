@@ -30,7 +30,7 @@ description = "Contains the Java Test Fixtures plugin"
 dependencies {
     api(projects.coreApi)
 
-    api(oldLibs.inject)
+    api(libs.inject)
 
     implementation(projects.baseServices)
     implementation(projects.dependencyManagement)

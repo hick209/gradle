@@ -1,7 +1,7 @@
 // tag::do-this[]
 plugins {
     id("java-library")
-    alias(oldLibs.plugins.versions)
+    alias(libs.plugins.versions)
 }
 // end::do-this[]
 
@@ -11,8 +11,8 @@ repositories {
 
 // tag::do-this[]
 dependencies {
-    api(oldLibs.bundles.groovy)
-    testImplementation(oldLibs.junit.jupiter)
-    implementation(oldLibs.commons.lang3)
+    api(libs.bundles.groovy)
+    testImplementation(libs.junit.jupiter)
+    implementation(libs.commons.lang3)
 }
 // end::do-this[]

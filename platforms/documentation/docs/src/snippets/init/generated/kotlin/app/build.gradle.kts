@@ -18,12 +18,12 @@ repositories {
 // tag::init-dep[]
 dependencies {  // <2>
     // Use JUnit Jupiter for testing.
-    testImplementation(oldLibs.junit.jupiter)
+    testImplementation(libs.junit.jupiter)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
-    implementation(oldLibs.guava)
+    implementation(libs.guava)
 }
 // end::init[]
 // end::init-dep[]

@@ -19,18 +19,18 @@ dependencies {
     testImplementation(projects.modelCore)
     testImplementation(projects.fileTemp)
     testImplementation(projects.core)
-    testImplementation(oldLibs.kotlinStdlib)
-    testImplementation(oldLibs.inject)
+    testImplementation(libs.kotlinStdlib)
+    testImplementation(libs.inject)
 
-    testImplementation(oldLibs.archunitJunit5)
-    testImplementation(oldLibs.guava)
-    testImplementation(oldLibs.gson)
-    testImplementation(oldLibs.junitJupiter)
-    testImplementation(oldLibs.assertj)
+    testImplementation(libs.archunitJunit5)
+    testImplementation(libs.guava)
+    testImplementation(libs.gson)
+    testImplementation(libs.junitJupiter)
+    testImplementation(libs.assertj)
 
     testRuntimeOnly(projects.distributionsFull)
 
-    testRuntimeOnly(oldLibs.junitPlatform)
+    testRuntimeOnly(libs.junitPlatform)
 }
 
 val acceptedApiChangesDirectory = layout.projectDirectory.dir("src/changes/accepted-changes")

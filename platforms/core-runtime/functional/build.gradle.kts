@@ -6,10 +6,10 @@ plugins {
 description = "Tools to work with functional code, including data structures"
 
 dependencies {
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
+    api(libs.jspecify)
+    api(libs.jsr305)
     api(projects.stdlibJavaExtensions)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.fastutil)
+    implementation(libs.guava)
+    implementation(libs.fastutil)
 }

@@ -26,7 +26,7 @@ dependencies {
     api(projects.coreApi)
     api(projects.platformJvm)
 
-    api(oldLibs.inject)
+    api(libs.inject)
 
     implementation(projects.baseServices)
     implementation(projects.pluginsJavaBase)

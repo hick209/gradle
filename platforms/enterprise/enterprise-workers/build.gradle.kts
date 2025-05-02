@@ -12,5 +12,5 @@ gradleModule {
 }
 
 dependencies {
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 }

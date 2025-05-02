@@ -18,12 +18,12 @@ dependencies {
     implementation(projects.reportRendering)
     implementation(projects.serviceLookup)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jspecify)
+    implementation(libs.guava)
+    implementation(libs.jspecify)
 
     testImplementation(projects.internalTesting)
 
-    integTestImplementation(oldLibs.jsoup)
+    integTestImplementation(libs.jsoup)
 
     integTestDistributionRuntimeOnly(projects.distributionsFull)
 }

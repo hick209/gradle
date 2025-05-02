@@ -36,8 +36,8 @@ dependencies {
     implementation(projects.declarativeDslApi)
     implementation(projects.coreApi)
 
-    api(oldLibs.futureKotlin("stdlib"))
-    implementation(oldLibs.futureKotlin("reflect"))
+    api(libs.kotlinStdlib)
+    implementation(libs.kotlinReflect)
 
     testImplementation(projects.internalTesting)
 }

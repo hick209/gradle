@@ -14,11 +14,11 @@ dependencies {
     api(projects.serviceLookup)
     api(projects.serviceProvider)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.concurrent)
     implementation(projects.stdlibJavaExtensions)
 
-    implementation(oldLibs.inject)
+    implementation(libs.inject)
 }
 

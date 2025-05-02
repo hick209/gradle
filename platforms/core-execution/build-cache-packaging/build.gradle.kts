@@ -13,11 +13,11 @@ dependencies {
     api(projects.snapshots)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.guava)
+    api(libs.guava)
 
-    implementation(oldLibs.commonsCompress)
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.jspecify)
+    implementation(libs.commonsCompress)
+    implementation(libs.commonsIo)
+    implementation(libs.jspecify)
 
     testImplementation(projects.fileCollections)
     testImplementation(projects.processServices)

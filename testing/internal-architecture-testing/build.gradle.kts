@@ -6,10 +6,10 @@ description = "Collection of test fixtures and tests for architecture testing Gr
 
 dependencies {
     api(platform(projects.distributionsDependencies))
-    api(oldLibs.archunit)
-    api(oldLibs.archunitJunit5Api)
+    api(libs.archunit)
+    api(libs.archunitJunit5Api)
 
-    runtimeOnly(oldLibs.archunitJunit5) {
+    runtimeOnly(libs.archunitJunit5) {
         because("This is what we use to write our architecture tests")
     }
 }

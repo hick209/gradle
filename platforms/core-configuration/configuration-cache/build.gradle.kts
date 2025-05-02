@@ -38,9 +38,9 @@ dependencies {
     api(projects.snapshots)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.groovy)
-    api(oldLibs.inject)
-    api(oldLibs.kotlinStdlib)
+    api(libs.groovy)
+    api(libs.inject)
+    api(libs.kotlinStdlib)
 
     // TODO - it might be good to allow projects to contribute state to save and restore, rather than have this project know about everything
     implementation(projects.buildEvents)
@@ -71,11 +71,11 @@ dependencies {
     implementation(projects.stdlibSerializationCodecs)
     implementation(projects.toolingApi)
 
-    implementation(oldLibs.fastutil)
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jspecify)
-    implementation(oldLibs.kryo)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.fastutil)
+    implementation(libs.guava)
+    implementation(libs.jspecify)
+    implementation(libs.kryo)
+    implementation(libs.slf4jApi)
 
     runtimeOnly(projects.beanSerializationServices)
     runtimeOnly(projects.compositeBuilds)
@@ -83,14 +83,14 @@ dependencies {
     // TODO - move the isolatable serializer to model-core to live with the isolatable infrastructure
     runtimeOnly(projects.workers)
 
-    runtimeOnly(oldLibs.kotlinReflect)
+    runtimeOnly(libs.kotlinReflect)
 
     testImplementation(projects.beanSerializationServices)
     testImplementation(testFixtures(projects.beanSerializationServices))
     testImplementation(projects.io)
     testImplementation(testFixtures(projects.core))
-    testImplementation(oldLibs.mockitoKotlin)
-    testImplementation(oldLibs.kotlinCoroutinesDebug)
+    testImplementation(libs.mockitoKotlin)
+    testImplementation(libs.kotlinxCoroutinesDebug)
 
     integTestImplementation(projects.cli)
     integTestImplementation(projects.ide)
@@ -101,9 +101,9 @@ dependencies {
     integTestImplementation(projects.toolingApi)
     integTestImplementation(projects.workers)
 
-    integTestImplementation(oldLibs.ant)
-    integTestImplementation(oldLibs.guava)
-    integTestImplementation(oldLibs.inject)
+    integTestImplementation(libs.ant)
+    integTestImplementation(libs.guava)
+    integTestImplementation(libs.inject)
     integTestImplementation("com.microsoft.playwright:playwright:1.20.1")
 
     integTestImplementation(testFixtures(projects.toolingApi))

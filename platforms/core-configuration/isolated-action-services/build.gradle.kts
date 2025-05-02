@@ -38,12 +38,12 @@ dependencies {
     implementation(projects.stdlibKotlinExtensions)
     implementation(projects.stdlibSerializationCodecs)
 
-    implementation(oldLibs.jspecify)
-    implementation(oldLibs.kotlinStdlib)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.jspecify)
+    implementation(libs.kotlinStdlib)
+    implementation(libs.slf4jApi)
 
     testImplementation(projects.beanSerializationServices)
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.beanSerializationServices))
-    testImplementation(oldLibs.mockitoKotlin)
+    testImplementation(libs.mockitoKotlin)
 }

@@ -42,7 +42,7 @@ app {
 dependencies {
     implementation(projects.buildProcessServices)
 
-    implementation(oldLibs.jspecify)
+    implementation(libs.jspecify)
 
     manifestClasspath(projects.stdlibJavaExtensions)
     manifestClasspath(projects.buildProcessServices)

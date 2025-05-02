@@ -21,6 +21,6 @@ plugins {
 description = "Useful extension methods for Kotlin"
 
 dependencies {
-    api(oldLibs.kotlinStdlib)
+    api(libs.kotlinStdlib)
     implementation(projects.stdlibJavaExtensions)
 }

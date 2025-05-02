@@ -15,9 +15,9 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.jgit)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.jgit)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.files)
     implementation(projects.functional)
@@ -26,11 +26,11 @@ dependencies {
     implementation(projects.persistentCache)
     implementation(projects.serialization)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jgitSsh) {
+    implementation(libs.guava)
+    implementation(libs.jgitSsh) {
         exclude("org.apache.sshd", "sshd-osgi") // Because it duplicates sshd-core and sshd-commons contents
     }
-    implementation(oldLibs.jsr305)
+    implementation(libs.jsr305)
 
     testImplementation(projects.native)
     testImplementation(projects.snapshots)
@@ -40,13 +40,13 @@ dependencies {
     testFixturesImplementation(projects.baseServices)
     testFixturesImplementation(projects.internalIntegTesting)
 
-    testFixturesImplementation(oldLibs.jgit)
-    testFixturesImplementation(oldLibs.jgitSsh) {
+    testFixturesImplementation(libs.jgit)
+    testFixturesImplementation(libs.jgitSsh) {
         exclude("org.apache.sshd", "sshd-osgi") // Because it duplicates sshd-core and sshd-commons contents
     }
-    testFixturesImplementation(oldLibs.commonsIo)
-    testFixturesImplementation(oldLibs.commonsHttpclient)
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.commonsIo)
+    testFixturesImplementation(libs.commonsHttpclient)
+    testFixturesImplementation(libs.guava)
 
     integTestImplementation(projects.enterpriseOperations)
     integTestImplementation(projects.launcher)

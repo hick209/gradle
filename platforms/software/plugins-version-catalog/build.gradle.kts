@@ -26,17 +26,17 @@ dependencies {
     api(projects.coreApi)
     api(projects.dependencyManagement)
 
-    api(oldLibs.guava)
-    api(oldLibs.inject)
+    api(libs.guava)
+    api(libs.inject)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.loggingApi)
     implementation(projects.platformBase)
     implementation(projects.platformJvm)
 
-    implementation(oldLibs.jspecify)
+    implementation(libs.jspecify)
 
-    runtimeOnly(oldLibs.groovy)
+    runtimeOnly(libs.groovy)
 
     integTestImplementation(testFixtures(projects.core))
     integTestImplementation(testFixtures(projects.jvmServices))

@@ -21,7 +21,7 @@ plugins {
 description = "The messages and types sent between client and daemon"
 
 dependencies {
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
     api(projects.baseServices)
     api(projects.classloaders)
     api(projects.loggingApi)
@@ -39,8 +39,8 @@ dependencies {
     // The client should not depend on core or core-api, but core still contains some types that are shared between the client and daemon
     api(projects.core)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jsr305)
+    implementation(libs.guava)
+    implementation(libs.jsr305)
     implementation(projects.enterpriseLogging)
     implementation(projects.time)
 

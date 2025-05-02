@@ -18,7 +18,7 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.toolingApi)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.core)
     implementation(projects.fileTemp)
@@ -27,16 +27,16 @@ dependencies {
     implementation(projects.wrapperShared)
     implementation(projects.buildProcessServices)
 
-    implementation(oldLibs.commonsIo)
+    implementation(libs.commonsIo)
 
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(projects.launcher)
     testFixturesImplementation(projects.toolingApi)
     testFixturesImplementation(projects.wrapperShared)
     testFixturesImplementation(testFixtures(projects.core))
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.guava)
 
-    testImplementation(oldLibs.guava)
+    testImplementation(libs.guava)
     testImplementation(testFixtures(projects.core))
 
     integTestImplementation(projects.native)
@@ -46,8 +46,8 @@ dependencies {
     integTestImplementation(projects.jvmServices)
     integTestImplementation(testFixtures(projects.buildConfiguration))
     integTestImplementation(testFixtures(projects.buildProcessServices))
-    integTestImplementation(oldLibs.slf4jApi)
-    integTestImplementation(oldLibs.jetbrainsAnnotations)
+    integTestImplementation(libs.slf4jApi)
+    integTestImplementation(libs.jetbrainsAnnotations)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("Tests instantiate DefaultClassLoaderRegistry which requires a 'gradle-plugins.properties' through DefaultPluginModuleRegistry")

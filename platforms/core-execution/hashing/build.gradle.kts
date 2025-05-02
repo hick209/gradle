@@ -14,7 +14,7 @@ gradleModule {
 dependencies {
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
-    implementation(oldLibs.guava)
+    implementation(libs.guava)
 }

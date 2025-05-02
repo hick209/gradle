@@ -26,7 +26,7 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.kotlinStdlib)
+    api(libs.kotlinStdlib)
 
     implementation(projects.buildOption)
     implementation(projects.coreApi)

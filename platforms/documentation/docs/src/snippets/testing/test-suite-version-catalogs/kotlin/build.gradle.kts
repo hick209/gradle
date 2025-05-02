@@ -31,9 +31,9 @@ testing {
         // tag::version-catalogs-deps[]
         val test by getting(JvmTestSuite::class) {
             dependencies {
-                runtimeOnly(oldLibs.guava)
-                implementation(oldLibs.commons.lang3)
-                implementation.bundle(oldLibs.bundles.groovy)
+                runtimeOnly(libs.guava)
+                implementation(libs.commons.lang3)
+                implementation.bundle(libs.bundles.groovy)
             }
         }
         // end::version-catalogs-deps[]

@@ -37,16 +37,16 @@ dependencies {
     api(projects.messaging)
     api(projects.testingBaseInfrastructure)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     implementation(projects.concurrent)
 
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.slf4jApi)
 
-    compileOnly(oldLibs.junit) {
+    compileOnly(libs.junit) {
         because("The actual version is provided by the user on the testRuntimeClasspath")
     }
-    compileOnly(oldLibs.testng) {
+    compileOnly(libs.testng) {
         because("The actual version is provided by the user on the testRuntimeClasspath")
     }
 
@@ -54,7 +54,7 @@ dependencies {
     testImplementation(testFixtures(projects.messaging))
     testImplementation(testFixtures(projects.time))
 
-    testImplementation(oldLibs.assertj) {
+    testImplementation(libs.assertj) {
         because("We test assertion errors coming from AssertJ")
     }
     testImplementation("org.opentest4j:opentest4j") {
@@ -64,18 +64,18 @@ dependencies {
         }
         because("We test assertion errors coming from OpenTest4J")
     }
-    testImplementation(oldLibs.junit) {
+    testImplementation(libs.junit) {
         because("To provide an implementation during testing")
     }
-    testImplementation(oldLibs.testng) {
+    testImplementation(libs.testng) {
         because("To provide an implementation during testing")
     }
-    testRuntimeOnly(oldLibs.guice) {
+    testRuntimeOnly(libs.guice) {
         because("Used by TestNG")
     }
 
     testFixturesImplementation(projects.testingBase)
-    testFixturesImplementation(oldLibs.junit)
-    testFixturesImplementation(oldLibs.testng)
+    testFixturesImplementation(libs.junit)
+    testFixturesImplementation(libs.testng)
 
 }

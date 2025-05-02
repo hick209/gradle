@@ -27,11 +27,11 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.toolingApi)
 
-    api(oldLibs.groovy)
-    api(oldLibs.guava)
-    api(oldLibs.kotlinStdlib)
-    api(oldLibs.inject)
-    api(oldLibs.slf4jApi)
+    api(libs.groovy)
+    api(libs.guava)
+    api(libs.kotlinStdlib)
+    api(libs.inject)
+    api(libs.slf4jApi)
 
     implementation(projects.baseAsm)
     implementation(projects.instrumentationReporting)
@@ -62,33 +62,33 @@ dependencies {
     implementation("org.gradle:java-api-extractor")
     implementation("org.gradle:kotlin-dsl-shared-runtime")
 
-    implementation(oldLibs.asm)
-    implementation(oldLibs.groovyJson)
-    implementation(oldLibs.jspecify)
-    implementation(oldLibs.kotlinReflect)
+    implementation(libs.asm)
+    implementation(libs.groovyJson)
+    implementation(libs.jspecify)
+    implementation(libs.kotlinReflect)
 
-    implementation(oldLibs.kotlinCompilerEmbeddable)
-    api(oldLibs.futureKotlin("script-runtime"))
+    implementation(libs.kotlinCompilerEmbeddable)
+    api(libs.kotlinScriptRuntime)
 
-    api(oldLibs.futureKotlin("scripting-common")) {
+    api(libs.kotlinScriptingCommon) {
         isTransitive = false
     }
-    implementation(oldLibs.futureKotlin("scripting-jvm")) {
+    implementation(libs.kotlinScriptingJvm) {
         isTransitive = false
     }
-    implementation(oldLibs.futureKotlin("scripting-jvm-host")) {
+    implementation(libs.kotlinScriptingJvmHost) {
         isTransitive = false
     }
-    implementation(oldLibs.futureKotlin("scripting-compiler-embeddable")) {
+    implementation(libs.kotlinScriptingCompilerEmbeddable) {
         isTransitive = false
     }
-    api(oldLibs.futureKotlin("scripting-compiler-impl-embeddable")) {
+    api(libs.kotlinScriptingCompilerImplEmbeddable) {
         isTransitive = false
     }
-    implementation(oldLibs.futureKotlin("sam-with-receiver-compiler-plugin")) {
+    implementation(libs.kotlinSamWithReceiverCompilerPlugin) {
         isTransitive = false
     }
-    implementation(oldLibs.futureKotlin("assignment-compiler-plugin-embeddable")) {
+    implementation(libs.kotlinAssignmentCompilerEmbeddable) {
         isTransitive = false
     }
     shadow("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0") {
@@ -109,12 +109,12 @@ dependencies {
     testImplementation(projects.platformJvm)
     testImplementation(projects.versionControl)
     testImplementation(testFixtures(projects.core))
-    testImplementation(oldLibs.ant)
-    testImplementation(oldLibs.mockitoKotlin)
-    testImplementation(oldLibs.jacksonKotlin)
-    testImplementation(oldLibs.archunit)
-    testImplementation(oldLibs.kotlinCoroutines)
-    testImplementation(oldLibs.awaitility)
+    testImplementation(libs.ant)
+    testImplementation(libs.mockitoKotlin)
+    testImplementation(libs.jacksonKotlin)
+    testImplementation(libs.archunit)
+    testImplementation(libs.kotlinxCoroutines)
+    testImplementation(libs.awaitility)
 
     integTestImplementation(projects.buildOption) {
         because("KotlinSettingsScriptIntegrationTest makes uses of FeatureFlag")
@@ -123,7 +123,7 @@ dependencies {
         because("ClassBytesRepositoryTest makes use of Groovydoc task.")
     }
     integTestImplementation(projects.internalTesting)
-    integTestImplementation(oldLibs.mockitoKotlin)
+    integTestImplementation(libs.mockitoKotlin)
 
     testRuntimeOnly(projects.distributionsNative) {
         because("SimplifiedKotlinScriptEvaluator reads default imports from the distribution (default-imports.txt) and BuildType from platform-native is used in ProjectAccessorsClassPathTest.")
@@ -141,12 +141,12 @@ dependencies {
 
     testFixturesImplementation(testFixtures(projects.hashing))
 
-    testFixturesImplementation(oldLibs.kotlinCompilerEmbeddable)
+    testFixturesImplementation(libs.kotlinCompilerEmbeddable)
 
-    testFixturesImplementation(oldLibs.junit)
-    testFixturesImplementation(oldLibs.mockitoKotlin)
-    testFixturesImplementation(oldLibs.jacksonKotlin)
-    testFixturesImplementation(oldLibs.asm)
+    testFixturesImplementation(libs.junit)
+    testFixturesImplementation(libs.mockitoKotlin)
+    testFixturesImplementation(libs.jacksonKotlin)
+    testFixturesImplementation(libs.asm)
 
     integTestDistributionRuntimeOnly(projects.distributionsBasics)
 }

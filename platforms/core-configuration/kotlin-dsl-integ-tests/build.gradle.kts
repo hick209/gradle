@@ -18,13 +18,13 @@ dependencies {
     integTestImplementation(projects.languageJvm)
     integTestImplementation(projects.platformJvm)
     integTestImplementation(testFixtures(projects.jacoco))
-    integTestImplementation(oldLibs.mockwebserver) {
+    integTestImplementation(libs.mockwebserver) {
         exclude(group = "org.bouncycastle").because("MockWebServer uses a different version of BouncyCastle")
     }
-    integTestImplementation(oldLibs.kotlinCompilerEmbeddable)
-    integTestImplementation(oldLibs.mockitoKotlin)
-    integTestImplementation(oldLibs.kotlinStdlib)
-    integTestImplementation(oldLibs.kotlinReflect) {
+    integTestImplementation(libs.kotlinCompilerEmbeddable)
+    integTestImplementation(libs.mockitoKotlin)
+    integTestImplementation(libs.kotlinStdlib)
+    integTestImplementation(libs.kotlinReflect) {
         because("mockito-kotlin 1.6 requires kotlin-reflect in 1.0.7, we want to overrule that")
     }
 

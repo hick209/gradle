@@ -21,13 +21,13 @@ plugins {
 dependencies {
     api(projects.baseAsm)
 
-    api(oldLibs.asm)
-    api(oldLibs.asmTree)
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
+    api(libs.asm)
+    api(libs.asmTree)
+    api(libs.jspecify)
+    api(libs.jsr305)
 
     implementation(projects.stdlibJavaExtensions)
 
-    implementation(oldLibs.groovy)
+    implementation(libs.groovy)
 }
 

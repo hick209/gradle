@@ -17,18 +17,18 @@ dependencies {
     api(projects.messaging)
     api(projects.testingJvmInfrastructure)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
 
     implementation(projects.logging)
     implementation(projects.stdlibJavaExtensions)
 
-    compileOnly(oldLibs.junitPlatform) {
+    compileOnly(libs.junitPlatform) {
         because("The actual version is provided by the user on the testRuntimeClasspath")
     }
-    compileOnly(oldLibs.junitPlatformEngine) {
+    compileOnly(libs.junitPlatformEngine) {
         because("The actual version is provided by the user on the testRuntimeClasspath")
     }
 
-    implementation(oldLibs.jsr305)
+    implementation(libs.jsr305)
 }

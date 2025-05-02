@@ -25,7 +25,7 @@ description = "Configuration Cache serialization based isolation for object grap
 dependencies {
     api(projects.graphSerialization)
 
-    api(oldLibs.kotlinStdlib)
+    api(libs.kotlinStdlib)
 
     implementation(projects.baseServices)
     implementation(projects.configurationCacheBase)

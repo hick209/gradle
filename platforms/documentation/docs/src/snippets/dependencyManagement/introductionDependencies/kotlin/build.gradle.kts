@@ -23,7 +23,7 @@ dependencies {
 
 // tag::dependency-intro-catalog[]
 dependencies {
-    implementation(oldLibs.guava)
-    api(oldLibs.juneau.marshall)
+    implementation(libs.guava)
+    api(libs.juneau.marshall)
 }
 // end::dependency-intro-catalog[]

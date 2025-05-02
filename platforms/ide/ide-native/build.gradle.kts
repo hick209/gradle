@@ -14,13 +14,13 @@ sourceSets {
 }
 
 dependencies {
-    compileOnly(oldLibs.jetbrainsAnnotations)
+    compileOnly(libs.jetbrainsAnnotations)
 
-    api(oldLibs.groovy)
-    api(oldLibs.guava)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
-    api(oldLibs.plist)
+    api(libs.groovy)
+    api(libs.guava)
+    api(libs.inject)
+    api(libs.jspecify)
+    api(libs.plist)
     api(projects.baseIdePlugins)
     api(projects.baseServices)
     api(projects.core)
@@ -38,8 +38,8 @@ dependencies {
     implementation(projects.serviceLookup)
     implementation(projects.functional)
     implementation(projects.platformBase)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.jsr305)
+    implementation(libs.commonsLang)
+    implementation(libs.jsr305)
 
     runtimeOnly(projects.dependencyManagement)
     runtimeOnly(projects.testingBase)
@@ -50,13 +50,13 @@ dependencies {
     testImplementation(testFixtures(projects.versionControl))
 
     integTestImplementation(projects.native)
-    integTestImplementation(oldLibs.commonsIo)
-    integTestImplementation(oldLibs.jgit)
+    integTestImplementation(libs.commonsIo)
+    integTestImplementation(libs.jgit)
 
     testFixturesApi(testFixtures(projects.ide))
-    testFixturesImplementation(oldLibs.plist)
-    testFixturesImplementation(oldLibs.guava)
-    testFixturesImplementation(oldLibs.groovyXml)
+    testFixturesImplementation(libs.plist)
+    testFixturesImplementation(libs.guava)
+    testFixturesImplementation(libs.groovyXml)
     testFixturesImplementation(testFixtures(projects.ide))
 
     testRuntimeOnly(projects.distributionsCore) {

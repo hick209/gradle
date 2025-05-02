@@ -11,7 +11,7 @@ dependencies {
     api(projects.pluginsJvmTestSuite)
     api(projects.publish)
 
-    api(oldLibs.inject)
+    api(libs.inject)
 
     implementation(projects.baseServices)
     implementation(projects.languageJvm)
@@ -30,7 +30,7 @@ dependencies {
     runtimeOnly(projects.testingBase)
     runtimeOnly(projects.toolchainsJvm)
 
-    runtimeOnly(oldLibs.groovy)
+    runtimeOnly(libs.groovy)
 
     testImplementation(testFixtures(projects.core))
 

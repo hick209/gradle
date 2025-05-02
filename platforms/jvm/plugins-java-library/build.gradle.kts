@@ -23,7 +23,7 @@ description = "Contains the java-library plugin, and its supporting classes.  Th
 dependencies {
     api(projects.coreApi)
 
-    api(oldLibs.inject)
+    api(libs.inject)
 
     implementation(projects.baseServices)
     implementation(projects.languageJava)

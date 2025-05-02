@@ -32,7 +32,7 @@ dependencies {
     api(projects.persistentCache)
     api(projects.serviceProvider)
 
-    api(oldLibs.kotlinStdlib)
+    api(libs.kotlinStdlib)
 
     implementation(projects.baseServices)
     implementation(projects.configurationProblemsBase)
@@ -44,8 +44,8 @@ dependencies {
     implementation(projects.serviceLookup)
     implementation(projects.stdlibKotlinExtensions)
 
-    implementation(oldLibs.groovy)
-    implementation(oldLibs.guava)
+    implementation(libs.groovy)
+    implementation(libs.guava)
 
     testFixturesImplementation(testFixtures(projects.core))
     testFixturesImplementation(testFixtures(projects.persistentCache))

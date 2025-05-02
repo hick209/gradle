@@ -38,8 +38,8 @@ dependencies {
     api(projects.serviceProvider)
     api(projects.snapshots)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.baseServices)
     implementation(projects.buildOperations)
@@ -63,7 +63,7 @@ dependencies {
     // from upgrading its target bytecode version.
     implementation(projects.core)
 
-    implementation(oldLibs.guava)
+    implementation(libs.guava)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.hashing))

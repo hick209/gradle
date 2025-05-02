@@ -21,7 +21,7 @@ plugins {
 description = "Implementation of the `gradle` command"
 
 dependencies {
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
     api(projects.baseServices)
     api(projects.cli)
     api(projects.clientServices)
@@ -35,11 +35,11 @@ dependencies {
     api(projects.core)
     api(projects.launcher)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.guava)
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.ant)
-    implementation(oldLibs.groovy)
+    implementation(libs.commonsLang)
+    implementation(libs.guava)
+    implementation(libs.commonsIo)
+    implementation(libs.ant)
+    implementation(libs.groovy)
     implementation(projects.buildOption)
     implementation(projects.buildState)
     implementation(projects.classloaders)

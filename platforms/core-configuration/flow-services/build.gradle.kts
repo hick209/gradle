@@ -28,7 +28,7 @@ dependencies {
     api(projects.modelCore)
     api(projects.serviceProvider)
 
-    api(oldLibs.kotlinStdlib)
+    api(libs.kotlinStdlib)
 
     implementation(projects.core)
     implementation(projects.messaging)
@@ -38,8 +38,8 @@ dependencies {
     implementation(projects.serviceRegistryBuilder)
     implementation(projects.stdlibKotlinExtensions)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.inject)
+    implementation(libs.guava)
+    implementation(libs.inject)
 
     integTestDistributionRuntimeOnly(projects.distributionsCore)
 }

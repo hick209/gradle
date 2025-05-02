@@ -23,8 +23,8 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.workerMain)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.hashing)
     implementation(projects.requestHandlerWorker)
@@ -32,9 +32,9 @@ dependencies {
     implementation(projects.snapshots)
     implementation(projects.time)
 
-    implementation(oldLibs.jsr305)
-    implementation(oldLibs.slf4jApi)
-    implementation(oldLibs.guava)
+    implementation(libs.jsr305)
+    implementation(libs.slf4jApi)
+    implementation(libs.guava)
 
     testImplementation(projects.native)
     testImplementation(projects.fileCollections)
@@ -51,8 +51,8 @@ dependencies {
     integTestImplementation(projects.jvmServices)
     integTestImplementation(projects.enterpriseOperations)
 
-    testFixturesImplementation(oldLibs.inject)
-    testFixturesImplementation(oldLibs.groovyJson)
+    testFixturesImplementation(libs.inject)
+    testFixturesImplementation(libs.groovyJson)
     testFixturesImplementation(projects.baseServices)
 
     integTestDistributionRuntimeOnly(projects.distributionsJvm) {

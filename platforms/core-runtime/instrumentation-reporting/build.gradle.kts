@@ -9,7 +9,7 @@ dependencies {
     api(projects.internalInstrumentationApi)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.jspecify)
+    api(libs.jspecify)
 
     integTestDistributionRuntimeOnly(projects.distributionsJvm)
 }

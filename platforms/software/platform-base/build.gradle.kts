@@ -13,15 +13,15 @@ dependencies {
     api(projects.logging)
     api(projects.modelCore)
 
-    api(oldLibs.guava)
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
+    api(libs.guava)
+    api(libs.jspecify)
+    api(libs.jsr305)
 
     implementation(projects.dependencyManagement)
     implementation(projects.execution)
     implementation(projects.modelReflect)
 
-    implementation(oldLibs.commonsLang)
+    implementation(libs.commonsLang)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.coreApi))
@@ -32,7 +32,7 @@ dependencies {
     testFixturesApi(projects.fileCollections)
     testFixturesApi(testFixtures(projects.modelCore))
 
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.guava)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("RuntimeShadedJarCreatorTest requires a distribution to access the ...-relocated.txt metadata")

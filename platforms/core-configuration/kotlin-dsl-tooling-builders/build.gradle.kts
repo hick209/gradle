@@ -7,7 +7,7 @@ description = "Kotlin DSL Tooling Builders for IDEs"
 dependencies {
     api(projects.coreApi)
     api(projects.core)
-    api(oldLibs.kotlinStdlib)
+    api(libs.kotlinStdlib)
 
     implementation(projects.classloaders)
     implementation(projects.serviceLookup)
@@ -23,7 +23,7 @@ dependencies {
     implementation(projects.kotlinDslToolingModels)
     implementation(projects.buildProcessServices)
 
-    implementation(oldLibs.jspecify)
+    implementation(libs.jspecify)
 
     testImplementation(testFixtures(projects.kotlinDsl))
     integTestImplementation(testFixtures(projects.toolingApi))
@@ -34,9 +34,9 @@ dependencies {
     testFixturesImplementation(projects.internalIntegTesting)
 
     crossVersionTestImplementation(projects.persistentCache)
-    crossVersionTestImplementation(oldLibs.slf4jApi)
-    crossVersionTestImplementation(oldLibs.guava)
-    crossVersionTestImplementation(oldLibs.ant)
+    crossVersionTestImplementation(libs.slf4jApi)
+    crossVersionTestImplementation(libs.guava)
+    crossVersionTestImplementation(libs.ant)
 
     integTestDistributionRuntimeOnly(projects.distributionsBasics)
     crossVersionTestDistributionRuntimeOnly(projects.distributionsJvm) {

@@ -12,13 +12,13 @@ dependencies {
     api(projects.problemsApi)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.guava)
-    api(oldLibs.jspecify)
+    api(libs.guava)
+    api(libs.jspecify)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.groovy)
-    implementation(oldLibs.inject)
+    implementation(libs.commonsLang)
+    implementation(libs.groovy)
+    implementation(libs.inject)
 
     testFixturesApi(projects.internalIntegTesting)
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.guava)
 }

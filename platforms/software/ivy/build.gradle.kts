@@ -17,16 +17,16 @@ dependencies {
     api(projects.publish)
     api(projects.resources)
 
-    api(oldLibs.jspecify)
-    api(oldLibs.inject)
+    api(libs.jspecify)
+    api(libs.inject)
 
     implementation(projects.functional)
     implementation(projects.loggingApi)
     implementation(projects.serviceLookup)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.ivy)
+    implementation(libs.guava)
+    implementation(libs.commonsLang)
+    implementation(libs.ivy)
 
     testImplementation(projects.native)
     testImplementation(projects.processServices)
@@ -37,7 +37,7 @@ dependencies {
     testImplementation(testFixtures(projects.platformBase))
     testImplementation(testFixtures(projects.dependencyManagement))
 
-    integTestImplementation(oldLibs.slf4jApi)
+    integTestImplementation(libs.slf4jApi)
 
     integTestRuntimeOnly(projects.resourcesS3)
     integTestRuntimeOnly(projects.resourcesSftp)
@@ -52,10 +52,10 @@ dependencies {
     testFixturesImplementation(projects.logging)
     testFixturesImplementation(projects.dependencyManagement)
     testFixturesImplementation(projects.internalIntegTesting)
-    testFixturesImplementation(oldLibs.slf4jApi)
-    testFixturesImplementation(oldLibs.sshdCore)
-    testFixturesImplementation(oldLibs.sshdScp)
-    testFixturesImplementation(oldLibs.sshdSftp)
+    testFixturesImplementation(libs.slf4jApi)
+    testFixturesImplementation(libs.sshdCore)
+    testFixturesImplementation(libs.sshdScp)
+    testFixturesImplementation(libs.sshdSftp)
 
     testRuntimeOnly(projects.distributionsCore) {
         because("ProjectBuilder tests load services from a Gradle distribution.")

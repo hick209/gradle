@@ -23,17 +23,17 @@ dependencies {
     api(projects.stdlibJavaExtensions)
     api(projects.workers)
 
-    api(oldLibs.groovy)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.groovy)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.classloaders)
     implementation(projects.dependencyManagement)
     implementation(projects.logging)
     implementation(projects.testSuitesBase)
 
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.guava)
+    implementation(libs.commonsLang)
+    implementation(libs.guava)
 
     testImplementation(projects.native)
     testImplementation(projects.resources)
@@ -43,8 +43,8 @@ dependencies {
     integTestImplementation(testFixtures(projects.modelReflect))
     integTestImplementation(testFixtures(projects.resourcesHttp))
 
-    testFixturesImplementation(oldLibs.commonsLang)
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.commonsLang)
+    testFixturesImplementation(libs.guava)
     testFixturesImplementation(projects.internalIntegTesting)
     testFixturesImplementation(testFixtures(projects.core))
 

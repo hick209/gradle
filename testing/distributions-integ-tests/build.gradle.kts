@@ -12,9 +12,9 @@ dependencies {
     integTestImplementation(projects.baseServices)
     integTestImplementation(projects.logging)
     integTestImplementation(projects.coreApi)
-    integTestImplementation(oldLibs.guava)
-    integTestImplementation(oldLibs.commonsIo)
-    integTestImplementation(oldLibs.ant)
+    integTestImplementation(libs.guava)
+    integTestImplementation(libs.commonsIo)
+    integTestImplementation(libs.ant)
 
     integTestBinDistribution(projects.distributionsFull)
     integTestAllDistribution(projects.distributionsFull)

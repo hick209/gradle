@@ -14,11 +14,11 @@ gradleModule {
 dependencies {
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
+    api(libs.jspecify)
+    api(libs.jsr305)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.guava)
+    implementation(libs.slf4jApi)
 
     testImplementation(projects.native)
     testImplementation(projects.baseServices) {

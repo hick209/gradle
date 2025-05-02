@@ -1,6 +1,6 @@
 plugins {
     `kotlin-dsl`
-    alias(oldLibs.plugins.versions) // Access version catalog in builSrc build file for plugin
+    alias(libs.plugins.versions) // Access version catalog in builSrc build file for plugin
 }
 
 repositories {
@@ -9,8 +9,8 @@ repositories {
 
 dependencies {
     // Access version catalog in buildSrc build file for dependencies
-    implementation(plugin(oldLibs.plugins.jacocolog)) // Plugin dependency
-    implementation(oldLibs.groovy.core) // Regular library from version catalog
+    implementation(plugin(libs.plugins.jacocolog)) // Plugin dependency
+    implementation(libs.groovy.core) // Regular library from version catalog
     implementation("org.apache.commons:commons-lang3:3.9") // Direct dependency
 }
 

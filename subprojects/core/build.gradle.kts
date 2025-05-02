@@ -109,15 +109,15 @@ dependencies {
     api(projects.versionedCache)
     api(projects.workerMain)
 
-    api(oldLibs.ant)
-    api(oldLibs.asm)
-    api(oldLibs.asmTree)
-    api(oldLibs.groovy)
-    api(oldLibs.guava)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
-    api(oldLibs.jsr305)
-    api(oldLibs.nativePlatform)
+    api(libs.ant)
+    api(libs.asm)
+    api(libs.asmTree)
+    api(libs.groovy)
+    api(libs.guava)
+    api(libs.inject)
+    api(libs.jspecify)
+    api(libs.jsr305)
+    api(libs.nativePlatform)
 
     implementation(projects.buildOperationsTrace)
     implementation(projects.io)
@@ -126,42 +126,42 @@ dependencies {
     implementation(projects.problemsRendering)
     implementation(projects.serviceRegistryBuilder)
 
-    implementation(oldLibs.asmCommons)
-    implementation(oldLibs.commonsCompress)
-    implementation(oldLibs.commonsIo)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.errorProneAnnotations)
-    implementation(oldLibs.fastutil)
-    implementation(oldLibs.groovyAnt)
-    implementation(oldLibs.groovyJson)
-    implementation(oldLibs.groovyXml)
-    implementation(oldLibs.slf4jApi)
-    implementation(oldLibs.tomlj) {
+    implementation(libs.asmCommons)
+    implementation(libs.commonsCompress)
+    implementation(libs.commonsIo)
+    implementation(libs.commonsLang)
+    implementation(libs.errorProneAnnotations)
+    implementation(libs.fastutil)
+    implementation(libs.groovyAnt)
+    implementation(libs.groovyJson)
+    implementation(libs.groovyXml)
+    implementation(libs.slf4jApi)
+    implementation(libs.tomlj) {
         // Used for its nullability annotations, not needed at runtime
         exclude("org.checkerframework", "checker-qual")
     }
-    implementation(oldLibs.xmlApis)
+    implementation(libs.xmlApis)
 
-    compileOnly(oldLibs.kotlinStdlib) {
+    compileOnly(libs.kotlinStdlib) {
         because("it needs to forward calls from instrumented code to the Kotlin standard library")
     }
 
     // Libraries that are not used in this project but required in the distribution
-    runtimeOnly(oldLibs.groovyAstbuilder)
-    runtimeOnly(oldLibs.groovyDateUtil)
-    runtimeOnly(oldLibs.groovyDatetime)
-    runtimeOnly(oldLibs.groovyDoc)
-    runtimeOnly(oldLibs.groovyNio)
+    runtimeOnly(libs.groovyAstbuilder)
+    runtimeOnly(libs.groovyDateUtil)
+    runtimeOnly(libs.groovyDatetime)
+    runtimeOnly(libs.groovyDoc)
+    runtimeOnly(libs.groovyNio)
 
     testImplementation(projects.buildInit)
     testImplementation(projects.platformJvm)
     testImplementation(projects.platformNative)
     testImplementation(projects.testingBase)
-    testImplementation(oldLibs.jsoup)
-    testImplementation(oldLibs.log4jToSlf4j)
-    testImplementation(oldLibs.jclToSlf4j)
+    testImplementation(libs.jsoup)
+    testImplementation(libs.log4jToSlf4j)
+    testImplementation(libs.jclToSlf4j)
 
-    testFixturesCompileOnly(oldLibs.jetbrainsAnnotations)
+    testFixturesCompileOnly(libs.jetbrainsAnnotations)
 
     testFixturesApi(projects.baseServices) {
         because("test fixtures expose Action")
@@ -223,12 +223,12 @@ dependencies {
     testFixturesImplementation(projects.normalizationJava)
     testFixturesImplementation(projects.persistentCache)
     testFixturesImplementation(projects.snapshots)
-    testFixturesImplementation(oldLibs.ant)
-    testFixturesImplementation(oldLibs.asm)
-    testFixturesImplementation(oldLibs.guava)
+    testFixturesImplementation(libs.ant)
+    testFixturesImplementation(libs.asm)
+    testFixturesImplementation(libs.guava)
     testFixturesImplementation(projects.internalInstrumentationApi)
-    testFixturesImplementation(oldLibs.ivy)
-    testFixturesImplementation(oldLibs.slf4jApi)
+    testFixturesImplementation(libs.ivy)
+    testFixturesImplementation(libs.slf4jApi)
     testFixturesImplementation(projects.dependencyManagement) {
         because("Used in VersionCatalogErrorMessages for org.gradle.api.internal.catalog.DefaultVersionCatalogBuilder.getExcludedNames")
     }
@@ -262,10 +262,10 @@ dependencies {
     integTestImplementation(projects.launcher)
     integTestImplementation(projects.war)
     integTestImplementation(projects.daemonServices)
-    integTestImplementation(oldLibs.jansi)
-    integTestImplementation(oldLibs.jetbrainsAnnotations)
-    integTestImplementation(oldLibs.jetty)
-    integTestImplementation(oldLibs.littleproxy)
+    integTestImplementation(libs.jansi)
+    integTestImplementation(libs.jetbrainsAnnotations)
+    integTestImplementation(libs.jetty)
+    integTestImplementation(libs.littleproxy)
     integTestImplementation(testFixtures(projects.native))
     integTestImplementation(testFixtures(projects.fileTemp))
 

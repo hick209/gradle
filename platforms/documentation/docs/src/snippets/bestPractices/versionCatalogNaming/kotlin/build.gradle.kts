@@ -1,7 +1,7 @@
 // tag::do-this[]
 plugins {
     id("java-library")
-    alias(oldLibs.plugins.versions)
+    alias(libs.plugins.versions)
 }
 
 repositories {
@@ -10,16 +10,16 @@ repositories {
 
 dependencies {
     // SLF4J
-    implementation(oldLibs.slf4j.api)
+    implementation(libs.slf4j.api)
 
     // Jackson
-    implementation(oldLibs.jackson.databind)
-    implementation(oldLibs.jackson.dataformatCsv)
+    implementation(libs.jackson.databind)
+    implementation(libs.jackson.dataformatCsv)
 
     // Groovy bundle
-    api(oldLibs.bundles.groovy)
+    api(libs.bundles.groovy)
 
     // Commons Lang
-    implementation(oldLibs.commons.lang3)
+    implementation(libs.commons.lang3)
 }
 // end::do-this[]

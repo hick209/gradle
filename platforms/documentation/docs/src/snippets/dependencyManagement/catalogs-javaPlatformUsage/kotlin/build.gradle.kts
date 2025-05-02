@@ -21,7 +21,7 @@ plugins {
 
 dependencies {
     constraints {
-        api(oldLibs.mylib)
+        api(libs.mylib)
     }
 }
 // end::platform_uses_catalog[]

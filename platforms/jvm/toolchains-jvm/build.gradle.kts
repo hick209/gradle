@@ -40,16 +40,16 @@ dependencies {
     api(projects.resources)
     api(projects.toolchainsJvmShared)
 
-    api(oldLibs.kotlinStdlib)
-    api(oldLibs.inject)
+    api(libs.kotlinStdlib)
+    api(libs.inject)
 
     implementation(projects.baseDiagnostics)
     implementation(projects.fileTemp)
     implementation(projects.modelCore)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jspecify)
-    implementation(oldLibs.slf4jApi)
+    implementation(libs.guava)
+    implementation(libs.jspecify)
+    implementation(libs.slf4jApi)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.logging))
@@ -61,7 +61,7 @@ dependencies {
         because("Tests instantiate DefaultClassLoaderRegistry which requires a 'gradle-plugins.properties' through DefaultPluginModuleRegistry")
     }
 
-    integTestImplementation(oldLibs.slf4jApi)
+    integTestImplementation(libs.slf4jApi)
 
     integTestDistributionRuntimeOnly(projects.distributionsJvm)
     crossVersionTestDistributionRuntimeOnly(projects.distributionsJvm)

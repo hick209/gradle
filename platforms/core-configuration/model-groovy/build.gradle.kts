@@ -9,14 +9,14 @@ dependencies {
     api(projects.modelCore)
     api(projects.baseServicesGroovy)
 
-    api(oldLibs.jspecify)
-    api(oldLibs.groovy)
+    api(libs.jspecify)
+    api(libs.groovy)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.coreApi)
 
-    implementation(oldLibs.guava)
-    implementation(oldLibs.jsr305)
+    implementation(libs.guava)
+    implementation(libs.jsr305)
 
     testImplementation(testFixtures(projects.core))
     testImplementation(testFixtures(projects.modelCore))

@@ -41,12 +41,12 @@ dependencies {
     api(projects.snapshots)
     api(projects.stdlibJavaExtensions)
 
-    api(oldLibs.guava)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.guava)
+    api(libs.inject)
+    api(libs.jspecify)
     api(projects.serialization)
 
-    implementation(oldLibs.jsr305)
+    implementation(libs.jsr305)
 
     testImplementation(projects.logging)
     integTestImplementation(projects.internalTesting)

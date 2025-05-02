@@ -26,9 +26,9 @@ dependencies {
     api(projects.core)
     api(projects.coreApi)
 
-    api(oldLibs.groovy)
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.groovy)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.stdlibJavaExtensions)
     implementation(projects.dependencyManagement)

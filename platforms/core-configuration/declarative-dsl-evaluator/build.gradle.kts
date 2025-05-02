@@ -37,5 +37,5 @@ dependencies {
     api(projects.declarativeDslCore)
     api(projects.declarativeDslToolingModels)
 
-    api(oldLibs.futureKotlin("stdlib"))
+    api(libs.kotlinStdlib)
 }

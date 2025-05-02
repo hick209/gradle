@@ -26,8 +26,8 @@ dependencies {
     api(projects.jvmServices)
     api(projects.modelCore)
 
-    api(oldLibs.inject)
-    api(oldLibs.jspecify)
+    api(libs.inject)
+    api(libs.jspecify)
 
     implementation(projects.baseServices)
     implementation(projects.fileOperations)
@@ -42,11 +42,11 @@ dependencies {
     implementation(projects.toolchainsJvm)
     implementation(projects.toolchainsJvmShared)
 
-    implementation(oldLibs.ant)
-    implementation(oldLibs.commonsLang)
-    implementation(oldLibs.groovy)
-    implementation(oldLibs.groovyTemplates)
-    implementation(oldLibs.guava)
+    implementation(libs.ant)
+    implementation(libs.commonsLang)
+    implementation(libs.groovy)
+    implementation(libs.groovyTemplates)
+    implementation(libs.guava)
 
     testImplementation(testFixtures(projects.core))
 

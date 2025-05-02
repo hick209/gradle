@@ -27,18 +27,18 @@ dependencies {
     distribution(projects.distributionsFull)
 
     // Groovy is part of our API
-    externalApi(oldLibs.groovy)
+    externalApi(libs.groovy)
     // Required to inject services into tasks and other objects
-    externalApi(oldLibs.inject)
+    externalApi(libs.inject)
     // Moslty used for nullability annotations
-    externalApi(oldLibs.jsr305)
-    externalApi(oldLibs.jspecify)
+    externalApi(libs.jsr305)
+    externalApi(libs.jspecify)
     // We use this to annotate type parameters as @Nullable
-    externalApi(oldLibs.jetbrainsAnnotations)
+    externalApi(libs.jetbrainsAnnotations)
     // SLF4J logging is part of our public API
-    externalApi(oldLibs.slf4jApi)
+    externalApi(libs.slf4jApi)
     // We only need this because of AntTarget :o
-    externalApi(oldLibs.ant)
+    externalApi(libs.ant)
 }
 
 val testRepoLocation = layout.buildDirectory.dir("repos/test")

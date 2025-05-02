@@ -14,8 +14,8 @@ gradleModule {
 }
 
 dependencies {
-    compileOnly(oldLibs.jetbrainsAnnotations)
+    compileOnly(libs.jetbrainsAnnotations)
 
-    api(oldLibs.jsr305)
-    api(oldLibs.jspecify)
+    api(libs.jsr305)
+    api(libs.jspecify)
 }
