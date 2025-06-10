@@ -4,7 +4,6 @@ import common.JvmCategory
 import common.Os
 import common.applyDefaultSettings
 import common.buildScanTagParam
-import common.toCapitalized
 import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import model.CIBuildModel
@@ -25,10 +24,9 @@ class DocsTestProject(
         id(asDocsTestId(model, os))
         name = "Docs Test - ${testJava.version.toCapitalized()} ${os.asName()}"
     }) {
-    val docsTests: List<BaseGradleBuildType>
+    val docsTests = testTypes.map { DocsTest(model, stage, os, testJava, it) }
 
     init {
-        docsTests = testTypes.map { DocsTest(model, stage, os, testJava, it, parallelism = 4) }
         docsTests.forEach(this::buildType)
     }
 }
@@ -63,15 +61,18 @@ class DocsTest(
     os: Os,
     testJava: JvmCategory,
     docsTestType: DocsTestType,
-    parallelism: Int = 1,
 ) : OsAwareBaseGradleBuildType(os = os, stage = stage, init = {
         id("${model.projectId}_${docsTestType.docsTestName}_${os.asName()}")
         name = "${docsTestType.docsTestDesc} - ${testJava.version.toCapitalized()} ${os.asName()}"
+        var maybeTestDistribution = " "
 
-        if (parallelism > 1) {
+        if (os == Os.LINUX) {
+            maybeTestDistribution += ParallelizationMethod.TestDistribution.extraBuildParameters
+        }
+        else {
             features {
                 parallelTests {
-                    this.numberOfBatches = parallelism
+                    this.numberOfBatches = 4
                 }
             }
         }
@@ -85,6 +86,7 @@ class DocsTest(
             timeout = 60,
             extraParameters =
                 buildScanTagParam(docsTestType.docsTestName) +
+                    maybeTestDistribution +
                     " -PenableConfigurationCacheForDocsTests=${docsTestType.ccEnabled}" +
                     " -PtestJavaVersion=${testJava.version.major}" +
                     " -PtestJavaVendor=${testJava.vendor.name.lowercase()}",
