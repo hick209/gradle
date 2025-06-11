@@ -16,7 +16,6 @@ plugins {
     id("org.asciidoctor.jvm.convert")
     id("gradlebuild.documentation")
     id("gradlebuild.generate-samples")
-    id("gradlebuild.split-docs")
 }
 
 repositories {

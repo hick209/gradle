@@ -4,6 +4,7 @@ import common.JvmCategory
 import common.Os
 import common.applyDefaultSettings
 import common.buildScanTagParam
+import configurations.ParallelizationMethod.TeamCityParallelTests
 import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import model.CIBuildModel
@@ -64,15 +65,17 @@ class DocsTest(
 ) : OsAwareBaseGradleBuildType(os = os, stage = stage, init = {
         id("${model.projectId}_${docsTestType.docsTestName}_${os.asName()}")
         name = "${docsTestType.docsTestDesc} - ${testJava.version.toCapitalized()} ${os.asName()}"
-        var maybeTestDistribution = " "
+        val parallelizationMethod =
+            if (os == Os.LINUX) {
+                ParallelizationMethod.TestDistribution
+            } else {
+                TeamCityParallelTests(4)
+            }
 
-        if (os == Os.LINUX) {
-            maybeTestDistribution += ParallelizationMethod.TestDistribution.extraBuildParameters
-        }
-        else {
+        if (parallelizationMethod is TeamCityParallelTests) {
             features {
                 parallelTests {
-                    this.numberOfBatches = 4
+                    this.numberOfBatches = parallelizationMethod.numberOfBatches
                 }
             }
         }
@@ -86,7 +89,7 @@ class DocsTest(
             timeout = 60,
             extraParameters =
                 buildScanTagParam(docsTestType.docsTestName) +
-                    maybeTestDistribution +
+                    parallelizationMethod.extraBuildParameters +
                     " -PenableConfigurationCacheForDocsTests=${docsTestType.ccEnabled}" +
                     " -PtestJavaVersion=${testJava.version.major}" +
                     " -PtestJavaVendor=${testJava.vendor.name.lowercase()}",
