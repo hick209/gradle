@@ -108,6 +108,7 @@ data class VersionedSettingsBranch(
         when {
             isMaster -> "${prefix}Nightly"
             isRelease -> "${prefix}ReleaseNightly"
+            isExperimental -> "${prefix}Nightly"
             else -> "${prefix}PatchReleaseNightly"
         }
 }
