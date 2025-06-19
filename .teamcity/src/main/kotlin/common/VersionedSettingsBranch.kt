@@ -85,7 +85,7 @@ data class VersionedSettingsBranch(
 
     fun vcsRootId() = DslContext.settingsRoot.id.toString()
 
-    fun gradlePromoteVcsRootId() = if (isExperimental) GRADLE_PROMOTE_EXPERIMENTAL_VCS_ROOT_ID else GRADLE_PROMOTE_MASTER_VCS_ROOT_ID
+    fun gradlePromoteVcsRootId() = GRADLE_PROMOTE_EXPERIMENTAL_VCS_ROOT_ID
 
     fun promoteNightlyTaskName() = nightlyTaskName("promote")
 
