@@ -308,5 +308,4 @@ tasks.compileTestGroovy {
     }
 }
 
-integTest.usesJavadocCodeSnippets = true
 testFilesCleanup.reportOnly = true

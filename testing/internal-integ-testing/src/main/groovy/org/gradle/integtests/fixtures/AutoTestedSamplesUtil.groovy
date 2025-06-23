@@ -44,16 +44,9 @@ class AutoTestedSamplesUtil {
         def workDir = SystemProperties.instance.currentDir
         def samplesDir = new File("$workDir/$dir")
         if (samplesDir.exists()) {
-            assertDeclaredAsInput(samplesDir.absolutePath)
             return samplesDir
         }
         throw new RuntimeException("$samplesDir does not exist")
-    }
-
-    static void assertDeclaredAsInput(String dir) {
-        String inputs = System.getProperty("declaredSampleInputs")
-        assert inputs: "Must declare source directory as input: 'integTest.usesJavadocCodeSnippets.set(true)'"
-        assert inputs == dir
     }
 
     static void runSamplesFromFile(File file, Closure runner) {

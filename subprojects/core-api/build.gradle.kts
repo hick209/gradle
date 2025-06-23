@@ -59,7 +59,8 @@ strictCompile {
     ignoreRawTypes() // raw types used in public API
 }
 
-integTest.usesJavadocCodeSnippets = true
+// AutoTestedSamplesCoreApiIntegrationTest including customized test logic
+integTest.generateDefaultAutoTestedSamplesTest = false
 testFilesCleanup.reportOnly = true
 tasks.isolatedProjectsIntegTest {
     enabled = false

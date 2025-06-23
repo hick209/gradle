@@ -133,7 +133,6 @@ tasks.named("toolingApiShadedJar") {
     dependsOn(gradle.includedBuild("build-logic").task(":java-api-extractor:assemble"))
 }
 
-integTest.usesJavadocCodeSnippets = true
 testFilesCleanup.reportOnly = true
 
 apply(from = "buildship.gradle")

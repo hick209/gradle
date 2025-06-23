@@ -75,8 +75,6 @@ strictCompile {
     ignoreRawTypes() // raw types used in public API
 }
 
-integTest.usesJavadocCodeSnippets = true
-
 packageCycles {
     excludePatterns.add("org/gradle/model/internal/core/**")
     excludePatterns.add("org/gradle/model/internal/inspect/**")

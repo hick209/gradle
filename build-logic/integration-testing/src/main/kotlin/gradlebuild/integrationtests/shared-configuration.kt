@@ -24,8 +24,11 @@ import gradlebuild.basics.testSplitExcludeTestClasses
 import gradlebuild.basics.testSplitIncludeTestClasses
 import gradlebuild.basics.testSplitOnlyTestGradleVersion
 import gradlebuild.basics.testing.TestType
+import gradlebuild.integrationtests.addSourceSet
+import gradlebuild.integrationtests.createTestTask
 import gradlebuild.integrationtests.extension.IntegrationTestExtension
 import gradlebuild.integrationtests.tasks.DistributionTest
+import gradlebuild.integrationtests.tasks.GenerateAutoTestedSamplesTestTask
 import gradlebuild.integrationtests.tasks.IntegrationTest
 import gradlebuild.modules.extension.ExternalModulesExtension
 import gradlebuild.testing.services.BuildBucketProvider
@@ -36,18 +39,19 @@ import org.gradle.api.attributes.Category
 import org.gradle.api.attributes.LibraryElements
 import org.gradle.api.attributes.Usage
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.file.Directory
 import org.gradle.api.tasks.GroovySourceDirectorySet
-import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.TaskProvider
+import org.gradle.api.tasks.compile.GroovyCompile
 import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.support.uppercaseFirstChar
 import org.gradle.plugins.ide.idea.IdeaPlugin
 import org.gradle.process.CommandLineArgumentProvider
+import java.util.Locale
 
 
 fun Project.addDependenciesAndConfigurations(prefix: String) {
@@ -104,6 +108,9 @@ fun Project.addDependenciesAndConfigurations(prefix: String) {
     }
 }
 
+private
+fun CharSequence.kebabCaseToPascalCase() =
+    replace("-[a-z]".toRegex()) { it.value.drop(1).uppercase(Locale.US) }.uppercaseFirstChar()
 
 @Suppress("UnusedPrivateProperty")
 internal
@@ -111,7 +118,26 @@ fun Project.addSourceSet(testType: TestType): SourceSet {
     val prefix = testType.prefix
     val sourceSets = the<SourceSetContainer>()
     val main by sourceSets.getting
-    return sourceSets.create("${prefix}Test")
+    val sourceSet = sourceSets.create("${prefix}Test")
+
+    val groovySourceDir = sourceSet.extensions.findByType<GroovySourceDirectorySet>()
+    // The task generate test class in Groovy, so it cannot be used if the project doesn't use Groovy for integration tests.
+    // This is the case for kotlin-dsl integration tests.
+    if (testType == TestType.INTEGRATION && groovySourceDir != null) {
+        val projectNameInPascalCase = name.kebabCaseToPascalCase()
+        val autoTestedSamplesTest = tasks.register<GenerateAutoTestedSamplesTestTask>("generateAutoTestedSamplesTest") {
+            mainSources.from(main.java)
+            output = layout.buildDirectory.dir("generated/sources/autoTested/groovy")
+            testClassName.set("${projectNameInPascalCase}AutoTestedSamplesTest")
+            generateAutoTestedSamplesTest.set(project.the<IntegrationTestExtension>().generateDefaultAutoTestedSamplesTest)
+        }
+
+        tasks.named<GroovyCompile>("compileIntegTestGroovy").configure {
+            source(autoTestedSamplesTest.map { it.output })
+        }
+    }
+
+    return sourceSet
 }
 
 
@@ -157,15 +183,8 @@ abstract class AgentsClasspathProvider : CommandLineArgumentProvider {
 
 
 internal
-class SamplesBaseDirPropertyProvider(@InputDirectory @PathSensitive(PathSensitivity.RELATIVE) val autoTestedSamplesDir: Directory) : CommandLineArgumentProvider {
-    override fun asArguments() = listOf("-DdeclaredSampleInputs=${autoTestedSamplesDir.asFile.absolutePath}")
-}
-
-
-internal
 fun Project.createTestTask(name: String, executer: String, sourceSet: SourceSet, testType: TestType, extraConfig: Action<IntegrationTest>): TaskProvider<IntegrationTest> =
     tasks.register<IntegrationTest>(name) {
-        val integTest = project.the<IntegrationTestExtension>()
         project.getBucketProvider().get().bucketProvider.configureTest(this, sourceSet.name)
         description = "Runs ${testType.prefix} with $executer executer"
         systemProperties["org.gradle.integtest.executer"] = executer
@@ -173,10 +192,6 @@ fun Project.createTestTask(name: String, executer: String, sourceSet: SourceSet,
         testClassesDirs = sourceSet.output.classesDirs
         classpath = sourceSet.runtimeClasspath
         extraConfig.execute(this)
-        if (integTest.usesJavadocCodeSnippets.get()) {
-            val samplesDir = layout.projectDirectory.dir("src/main")
-            jvmArgumentProviders.add(SamplesBaseDirPropertyProvider(samplesDir))
-        }
         setUpAgentIfNeeded(testType, executer)
     }
 
