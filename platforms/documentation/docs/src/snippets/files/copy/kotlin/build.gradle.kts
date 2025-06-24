@@ -247,6 +247,25 @@ tasks.register<Copy>("permissions") {
 }
 // end::file-permissions[]
 
+// tag::file-specific-permissions[]
+tasks.register<Copy>("specificPermissions") {
+    from("src/main/webapp")
+    into(layout.buildDirectory.dir("explodedWarWithScript"))
+    eachFile {
+        if (name == "script.sh") {
+            permissions {
+                user {
+                    read = true
+                    execute = true
+                }
+                other.execute = false
+            }
+        }
+    }
+}
+// end::file-specific-permissions[]
+
+
 tasks.register("test") {
     dependsOn(tasks.withType<Copy>())
     dependsOn(tasks["copyMethod"])
