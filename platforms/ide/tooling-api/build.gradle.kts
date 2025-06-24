@@ -139,3 +139,6 @@ apply(from = "buildship.gradle")
 tasks.isolatedProjectsIntegTest {
     enabled = false
 }
+
+// AutoTestedSamplesToolingApiTest including customized test logic
+integTest.generateDefaultAutoTestedSamplesTest = false
