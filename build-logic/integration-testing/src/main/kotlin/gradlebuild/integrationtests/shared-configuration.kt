@@ -24,8 +24,6 @@ import gradlebuild.basics.testSplitExcludeTestClasses
 import gradlebuild.basics.testSplitIncludeTestClasses
 import gradlebuild.basics.testSplitOnlyTestGradleVersion
 import gradlebuild.basics.testing.TestType
-import gradlebuild.integrationtests.addSourceSet
-import gradlebuild.integrationtests.createTestTask
 import gradlebuild.integrationtests.extension.IntegrationTestExtension
 import gradlebuild.integrationtests.tasks.DistributionTest
 import gradlebuild.integrationtests.tasks.GenerateAutoTestedSamplesTestTask
