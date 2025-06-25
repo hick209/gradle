@@ -59,7 +59,7 @@ strictCompile {
     ignoreRawTypes() // raw types used in public API
 }
 
-// AutoTestedSamplesCoreApiIntegrationTest including customized test logic
+// AutoTestedSamplesCoreApiIntegrationTest includes customized test logic, so automatic auto testing samples generation is not needed (and would fail) in this project
 integTest.generateDefaultAutoTestedSamplesTest = false
 testFilesCleanup.reportOnly = true
 tasks.isolatedProjectsIntegTest {

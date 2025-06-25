@@ -17,9 +17,11 @@ package gradlebuild.integrationtests.tasks
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.ConfigurableFileCollection
+import org.gradle.api.file.Directory
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.internal.file.FileOperations
 import org.gradle.api.provider.Property
+import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.CacheableTask
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
@@ -28,6 +30,8 @@ import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
+import org.gradle.kotlin.dsl.support.uppercaseFirstChar
+import java.util.Locale
 import java.util.regex.Pattern
 import javax.inject.Inject
 
@@ -47,7 +51,12 @@ abstract class GenerateAutoTestedSamplesTestTask @Inject constructor(@Internal v
     abstract val generateAutoTestedSamplesTest: Property<Boolean>
 
     @get:OutputDirectory
-    abstract val output: DirectoryProperty
+    abstract val outputDir: DirectoryProperty // = project.layout.buildDirectory.dir("generated/sources/autoTested/groovy")
+
+    init {
+        outputDir.convention(project.layout.buildDirectory.dir("generated/sources/autoTested/groovy"))
+        testClassName.convention("${project.name.kebabCaseToPascalCase()}AutoTestedSamplesTest")
+    }
 
     @TaskAction
     fun generate() {
@@ -56,9 +65,13 @@ abstract class GenerateAutoTestedSamplesTestTask @Inject constructor(@Internal v
         }
     }
 
+    private
+    fun CharSequence.kebabCaseToPascalCase() =
+        replace("-[a-z]".toRegex()) { it.value.drop(1).uppercase(Locale.US) }.uppercaseFirstChar()
+
     private fun generateTestFile() {
-        fileOperations.delete(output.get().asFile)
-        val testFile = output.file("org/gradle/samples/${testClassName.get()}.groovy").get().asFile
+        fileOperations.delete(outputDir.get().asFile)
+        val testFile = outputDir.file("org/gradle/samples/${testClassName.get()}.groovy").get().asFile
 
         fileOperations.mkdir(testFile.parentFile)
         testFile.writeText(

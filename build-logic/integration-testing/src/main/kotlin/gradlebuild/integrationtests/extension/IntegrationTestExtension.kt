@@ -21,7 +21,7 @@ import org.gradle.api.provider.Property
 
 abstract class IntegrationTestExtension {
     /**
-     * Enabled by default. If enabled, there will be a `GenerateAutoTestedSamplesTestTask` task
+     * If enabled, there will be a `GenerateAutoTestedSamplesTestTask` task
      * that generates a subclass of `AbstractAutoTestedSamplesTest` to
      * test all snippets embedded in javadoc with `class='autoTested'`.
      */

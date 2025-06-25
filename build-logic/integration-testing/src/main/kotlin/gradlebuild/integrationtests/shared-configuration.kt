@@ -46,10 +46,8 @@ import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.compile.GroovyCompile
 import org.gradle.kotlin.dsl.*
-import org.gradle.kotlin.dsl.support.uppercaseFirstChar
 import org.gradle.plugins.ide.idea.IdeaPlugin
 import org.gradle.process.CommandLineArgumentProvider
-import java.util.Locale
 
 
 fun Project.addDependenciesAndConfigurations(prefix: String) {
@@ -106,9 +104,7 @@ fun Project.addDependenciesAndConfigurations(prefix: String) {
     }
 }
 
-private
-fun CharSequence.kebabCaseToPascalCase() =
-    replace("-[a-z]".toRegex()) { it.value.drop(1).uppercase(Locale.US) }.uppercaseFirstChar()
+
 
 @Suppress("UnusedPrivateProperty")
 internal
@@ -122,22 +118,18 @@ fun Project.addSourceSet(testType: TestType): SourceSet {
     // The task generate test class in Groovy, so it cannot be used if the project doesn't use Groovy for integration tests.
     // This is the case for kotlin-dsl integration tests.
     if (testType == TestType.INTEGRATION && groovySourceDir != null) {
-        val projectNameInPascalCase = name.kebabCaseToPascalCase()
         val autoTestedSamplesTest = tasks.register<GenerateAutoTestedSamplesTestTask>("generateAutoTestedSamplesTest") {
             mainSources.from(main.java)
-            output = layout.buildDirectory.dir("generated/sources/autoTested/groovy")
-            testClassName.set("${projectNameInPascalCase}AutoTestedSamplesTest")
             generateAutoTestedSamplesTest.set(project.the<IntegrationTestExtension>().generateDefaultAutoTestedSamplesTest)
         }
 
         tasks.named<GroovyCompile>("compileIntegTestGroovy").configure {
-            source(autoTestedSamplesTest.map { it.output })
+            source(autoTestedSamplesTest.map { it.outputDir })
         }
     }
 
     return sourceSet
 }
-
 
 internal
 fun Project.createTasks(sourceSet: SourceSet, testType: TestType) {
