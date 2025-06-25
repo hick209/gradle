@@ -17,6 +17,7 @@
 import gradlebuild.basics.capitalize
 import gradlebuild.basics.testing.TestType
 import gradlebuild.integrationtests.addDependenciesAndConfigurations
+import gradlebuild.integrationtests.addSourceSet
 import gradlebuild.integrationtests.configureIde
 import gradlebuild.integrationtests.createTestTask
 import gradlebuild.integrationtests.setSystemPropertiesOfTestJVM
@@ -28,7 +29,7 @@ plugins {
     id("gradlebuild.jvm-compile")
 }
 
-val sourceSet = sourceSets.create("${TestType.CROSSVERSION.prefix}Test")
+val sourceSet = addSourceSet(TestType.CROSSVERSION)
 jvmCompile {
     addCompilationFrom(sourceSet)
 }

@@ -17,6 +17,7 @@
 import gradlebuild.basics.testing.TestType
 import gradlebuild.basics.testing.includeSpockAnnotation
 import gradlebuild.integrationtests.addDependenciesAndConfigurations
+import gradlebuild.integrationtests.addSourceSet
 import gradlebuild.integrationtests.configureIde
 import gradlebuild.integrationtests.createTasks
 import gradlebuild.integrationtests.createTestTask
@@ -34,7 +35,7 @@ extensions.create<IntegrationTestExtension>("integTest").apply {
     testJvmXmx.convention("512m")
 }
 
-val sourceSet = sourceSets.create("${TestType.INTEGRATION.prefix}Test")
+val sourceSet = addSourceSet(TestType.INTEGRATION)
 jvmCompile {
     addCompilationFrom(sourceSet)
 }
