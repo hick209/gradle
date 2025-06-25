@@ -200,7 +200,7 @@ Tasks graph for: root
 
 (*) - details omitted (listed previously)
 """)
-        outputContains("> Task :buildSrc:jar")
+        executed(":buildSrc:jar")
         outputDoesNotContain("--- :buildSrc:jar")
     }
 
@@ -218,7 +218,7 @@ Tasks graph for: root
                 group = 'org.test'
                 version = '1.0'
             """
-            file('src/main/java/Lib.java') << """
+            javaFile 'src/main/java/Lib.java',  """
                 public class Lib { public static void main() {
                     System.out.println("Before!");
                 } }
@@ -251,7 +251,7 @@ Tasks graph for: root
 (*) - details omitted (listed previously)
 """)
         outputContains("In script plugin")
-        outputContains("> Task :included:jar")
+        executed(":included:jar")
         outputDoesNotContain("--- :included:jar")
     }
 
@@ -301,7 +301,7 @@ Tasks graph for: root
 """)
     }
 
-    def "ignores mustRunAfter and shouldRunAfter but displays finalizations"() {
+    def "ignores mustRunAfter and shouldRunAfter"() {
         given:
         buildFile """
             def leaf1 = tasks.register("leaf1")
@@ -496,6 +496,14 @@ Tasks graph for: leaf1
         outputDoesNotContain("""Tasks graph for""")
         outputContains(":leaf1 SKIPPED")
         outputContains(":root SKIPPED")
+
+        when:
+        succeeds("root", "--dry-run", "--task-graph")
+
+        then:
+        outputDoesNotContain("""Tasks graph for""")
+        outputContains(":leaf1 SKIPPED")
+        outputContains(":root SKIPPED")
     }
 
     def "does not show artifact transforms"() {
@@ -554,16 +562,16 @@ Tasks graph for: resolve
 
     def "does not print detailed task graph for GradleBuild task"() {
         buildFile """
-            task b1(type:GradleBuild) {
+            tasks.register("b1", GradleBuild) {
                 tasks = ["t"]
                 buildName = 'bp'
             }
-            task b2(type:GradleBuild) {
+            tasks.register("b2", GradleBuild) {
                 tasks = [":t"]
                 buildName = 'bp'
                 mustRunAfter ":b1"
             }
-            task t
+            tasks.register("t")
         """
 
         when:
@@ -616,7 +624,8 @@ Tasks graph for: b1 b2
         succeeds(":included:fromIncluded", "root", "--task-graph")
 
         then:
-        output.find(~/(?m):task\d+ (org.gradle.api.DefaultTask)\s*> Task /) == null
+        // verify that the graph output is not mixed with Gradle Task output during the parallel execution
+        output.find(~/(?m):task\d+ \(org.gradle.api.DefaultTask\)\s*> Task /) == null
     }
 
     def "shows graph of tasks when project dependency is involved"() {
@@ -676,7 +685,7 @@ Tasks graph for: root
         outputDoesNotContain("I'm a task called")
     }
 
-    private def sampleGraph = """
+    private def sampleGraph = buildScriptSnippet """
         def leaf1 = tasks.register("leaf1") {
             doLast {
                 println("I'm a task called leaf1")
