@@ -17,11 +17,9 @@ package gradlebuild.integrationtests.tasks
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.file.Directory
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.internal.file.FileOperations
 import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.CacheableTask
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
@@ -35,6 +33,10 @@ import java.util.Locale
 import java.util.regex.Pattern
 import javax.inject.Inject
 
+/**
+ * This task scans the main source set and findd samples in javadoc with `class='autoTested'`,
+ * then generates a subclass of AbstractAutoTestedSamplesTest and adds it to the integTest.
+ */
 @CacheableTask
 abstract class GenerateAutoTestedSamplesTestTask @Inject constructor(@Internal val fileOperations: FileOperations) : DefaultTask() {
     private
