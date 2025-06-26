@@ -252,10 +252,8 @@ tasks.register("specificPermissions", Copy) {
         if (name == "script.sh") {
             permissions {
                 user {
-                    read = true
                     execute = true
                 }
-                other.execute = false
             }
         }
     }

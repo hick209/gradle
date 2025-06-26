@@ -255,16 +255,13 @@ tasks.register<Copy>("specificPermissions") {
         if (name == "script.sh") {
             permissions {
                 user {
-                    read = true
                     execute = true
                 }
-                other.execute = false
             }
         }
     }
 }
 // end::file-specific-permissions[]
-
 
 tasks.register("test") {
     dependsOn(tasks.withType<Copy>())

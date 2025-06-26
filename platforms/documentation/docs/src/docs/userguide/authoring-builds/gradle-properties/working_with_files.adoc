@@ -719,8 +719,9 @@ For any `CopySpec` involved in copying files, may it be the `Copy` task itself, 
 You can do the same for directories too, independently of files, via the link:{javadocPath}/org/gradle/api/file/CopyProcessingSpec.html#dirPermissions-org.gradle.api.Action-[CopySpec.dirPermissions {}] configurations block.
 
 NOTE: Not setting permissions explicitly will preserve the permissions of the original files or directories.
-The exception are archive tasks, see <<sec:reproducible_archives,Reproducible archives are enabled by default>> for details.
+The exception are archive tasks, see <<sec:reproducible_archives,Reproducible archives>> for details.
 
+.Setting file permissions for files and directories
 ====
 include::sample[dir="snippets/files/copy/kotlin",files="build.gradle.kts[tags=file-permissions]"]
 include::sample[dir="snippets/files/copy/groovy",files="build.gradle[tags=file-permissions]"]
@@ -738,6 +739,7 @@ Default permissions differ for files and directories:
 
 It's also possible to set permissions for a specific file. See the following example:
 
+.Setting file permissions for a specific file
 ====
 include::sample[dir="snippets/files/copy/kotlin",files="build.gradle.kts[tags=file-specific-permissions]"]
 include::sample[dir="snippets/files/copy/groovy",files="build.gradle[tags=file-specific-permissions]"]
@@ -1062,12 +1064,10 @@ The main difference is that archive tasks by default set the permissions of file
 
 We recognize two main cases, where users may want to change the permissions of files and directories in archives:
 
-1. Case where the file system is already the source of truth for the permissions
-2. Case where the permissions of files and directories in the archive should be set to specific values, for example to set the executable bit on a script file
-
-For the first case, please see <<#sec:revert_reproducible_archives,Preserve file system-defined aspects>> section.
-For the second case, permissions can be adjusted for `AbstractArchiveTask` and subclasses in the same way as for `CopySpec`, see <<#sec:setting_file_permissions,Setting file permissions>> for details.
-
+1. Case where the file system is already the source of truth for the permissions.
+For such configuration see <<#sec:revert_reproducible_archives,Preserve file system-defined aspects>> section.
+2. Case where the permissions of files and directories in the archive should be set to specific values, for example to set the executable bit on a script file.
+For such configuration see <<#sec:setting_file_permissions,Setting file permissions>> section.
 
 [[sec:unpacking_archives_example]]
 == Unpacking archives
