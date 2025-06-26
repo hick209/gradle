@@ -81,9 +81,7 @@ abstract class GenerateAutoTestedSamplesTestTask @Inject constructor(@Internal v
             package org.gradle.samples
             import org.gradle.integtests.fixtures.AbstractAutoTestedSamplesTest
             import org.junit.Test
-            import org.gradle.testdistribution.LocalOnly
 
-            @LocalOnly
             class ${testClassName.get()} extends AbstractAutoTestedSamplesTest {
                 @Test
                 void runSamples() {

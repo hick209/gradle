@@ -126,6 +126,9 @@ fun Project.addSourceSet(testType: TestType): SourceSet {
         tasks.named<GroovyCompile>("compileIntegTestGroovy").configure {
             source(autoTestedSamplesTest.map { it.outputDir })
         }
+        tasks.withType<IntegrationTest>().configureEach {
+            inputs.dir(layout.projectDirectory.dir("src/main")).withPathSensitivity(PathSensitivity.RELATIVE)
+        }
     }
 
     return sourceSet
