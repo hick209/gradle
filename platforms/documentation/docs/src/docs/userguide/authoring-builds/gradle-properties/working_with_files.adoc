@@ -733,8 +733,8 @@ Using empty configuration blocks for file or directory permissions still sets th
 Everything inside one of these configuration blocks is relative to the default values.
 Default permissions differ for files and directories:
 
-* *file*: read & write for *owner*, read for *group*, read for *other* (*0644*, *rw-r--r--*)
-* *directory*: read, write & execute for *owner*, read & execute for *group*, read & execute for *other* (*0755*, *rwxr-xr-x*)
+* *file*: read & write for *owner*, read for *group*, read for *other* (`0644`, `rw-r--r--`)
+* *directory*: read, write & execute for *owner*, read & execute for *group*, read & execute for *other* (`0755`, `rwxr-xr-x`)
 
 It's also possible to set permissions for a specific file. See the following example:
 
@@ -743,7 +743,7 @@ include::sample[dir="snippets/files/copy/kotlin",files="build.gradle.kts[tags=fi
 include::sample[dir="snippets/files/copy/groovy",files="build.gradle[tags=file-specific-permissions]"]
 ====
 
-NOTE: Setting file permissions explicitly for a file doesn't support UP-TO-DATE checks, so a task using this setting will always run.
+NOTE: Setting file permissions explicitly for a file doesn't support `UP-TO-DATE` checks, so a task using this setting will always run.
 
 
 [[sec:moving_files_example]]
@@ -1010,7 +1010,9 @@ include::sample[dir="snippets/files/fileTrees/groovy",files="build.gradle[tags=a
 You can see a practical example of extracting an archive file <<#sec:unpacking_archives_example,in the unpacking archives section>> below.
 
 [[sec:reproducible_archives]]
-== Reproducible archives are enabled by default
+== Reproducible archives
+
+NOTE: Starting with Gradle 9, archives are reproducible by default.
 
 It's desirable to recreate archives exactly the same, byte for byte, on different machines.
 Building an artifact from source code should produce the same result no matter when and where it is built.
@@ -1052,8 +1054,8 @@ In case the file system is already the source of truth for the permissions, e.g.
 org.gradle.archives.use-file-system-permissions=true
 ----
 
-[[sec:archives_permissions]]
-== Setting archive file permissions
+[[sec:permissions_inside_archives]]
+== Permissions for files inside archives
 
 Setting file permissions in Gradle archives is done in the same way as when copying file, see <<#sec:setting_file_permissions,Setting file permissions>> for details.
 The main difference is that archive tasks by default set the permissions of files and directories in the archive to fixed values, which are `0644` for files and `0755` for directories for reproducibility.
