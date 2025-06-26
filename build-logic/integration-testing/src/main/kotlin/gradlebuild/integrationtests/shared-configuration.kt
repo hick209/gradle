@@ -105,7 +105,6 @@ fun Project.addDependenciesAndConfigurations(prefix: String) {
 }
 
 
-
 @Suppress("UnusedPrivateProperty")
 internal
 fun Project.addSourceSet(testType: TestType): SourceSet {
@@ -127,7 +126,7 @@ fun Project.addSourceSet(testType: TestType): SourceSet {
             source(autoTestedSamplesTest.map { it.outputDir })
         }
         tasks.withType<IntegrationTest>().configureEach {
-            inputs.dir(layout.projectDirectory.dir("src/main")).withPathSensitivity(PathSensitivity.RELATIVE)
+            inputs.dir(autoTestedSamplesTest.flatMap { it.autoTestedSrcDir }).optional().withPathSensitivity(PathSensitivity.RELATIVE)
         }
     }
 

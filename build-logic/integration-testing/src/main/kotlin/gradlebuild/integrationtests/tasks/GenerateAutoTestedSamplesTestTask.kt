@@ -52,8 +52,13 @@ abstract class GenerateAutoTestedSamplesTestTask @Inject constructor(@Internal v
     @get:Input
     abstract val generateAutoTestedSamplesTest: Property<Boolean>
 
+    @get:Internal
+    abstract val autoTestedSrcDir: DirectoryProperty
+
     @get:OutputDirectory
-    abstract val outputDir: DirectoryProperty // = project.layout.buildDirectory.dir("generated/sources/autoTested/groovy")
+    abstract val outputDir: DirectoryProperty
+
+    private val srcMainDir = project.layout.projectDirectory.dir("src/main")
 
     init {
         outputDir.convention(project.layout.buildDirectory.dir("generated/sources/autoTested/groovy"))
@@ -64,6 +69,7 @@ abstract class GenerateAutoTestedSamplesTestTask @Inject constructor(@Internal v
     fun generate() {
         if (generateAutoTestedSamplesTest.get() && hasTestableSnippets()) {
             generateTestFile()
+            autoTestedSrcDir.set(srcMainDir)
         }
     }
 
